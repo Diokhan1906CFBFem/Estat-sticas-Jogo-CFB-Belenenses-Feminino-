@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
+<!DOCTYPE html><html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estatísticas em Direto — Guarda-Redes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Estatísticas em Direto — Guarda-Redes</title><style>
 
-<style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html,body{
   margin:0;
@@ -38,20 +37,18 @@ body{
   box-shadow:0 4px 18px rgba(0,0,0,.12);
 }
 
-/* =========================
-   CABEÇALHO COM LOGÓTIPO
-========================= */
+/* CABEÇALHO */
 
 .header{
   display:grid;
-  grid-template-columns:110px 1fr 110px;
+  grid-template-columns:120px 1fr 120px;
   align-items:center;
   gap:15px;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
 .logo{
-  width:90px;
+  width:100px;
   height:110px;
   object-fit:contain;
   justify-self:center;
@@ -76,9 +73,7 @@ h1{
   color:#555;
 }
 
-/* =========================
-   INFORMAÇÃO DO JOGO
-========================= */
+/* INFORMAÇÃO DO JOGO */
 
 .match-info{
   display:grid;
@@ -116,9 +111,7 @@ h1{
   background:#f5f8fc;
 }
 
-/* =========================
-   CONTROLOS
-========================= */
+/* CONTROLOS */
 
 .controls{
   display:grid;
@@ -150,9 +143,7 @@ select{
   font-weight:bold;
 }
 
-/* =========================
-   TEMPORIZADOR
-========================= */
+/* TEMPORIZADOR */
 
 .timer{
   text-align:center;
@@ -173,6 +164,8 @@ select{
 .timer-buttons button{
   flex:1;
 }
+
+/* BOTÕES */
 
 button{
   border:none;
@@ -197,9 +190,7 @@ button.success{
   background:#18794e;
 }
 
-/* =========================
-   ESTATÍSTICAS
-========================= */
+/* ESTATÍSTICAS */
 
 .stats-grid{
   display:grid;
@@ -268,9 +259,7 @@ button.success{
   background:#18794e;
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+/* RODAPÉ */
 
 .footer{
   margin-top:20px;
@@ -280,9 +269,7 @@ button.success{
   flex-wrap:wrap;
 }
 
-/* =========================
-   IMPRESSÃO
-========================= */
+/* IMPRESSÃO */
 
 @page{
   size:A4 landscape;
@@ -310,706 +297,512 @@ button.success{
     display:none;
   }
 
-  .logo{
-    width:75px;
-    height:95px;
-  }
 }
-</style>
-</head>
 
-<body>
+</style></head><body><div class="page"><div class="container"><!-- CABEÇALHO --><div class="header"><img
+class="logo"
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Os_Belenenses.png"
+alt="Clube de Futebol Os Belenenses"
 
-<div class="page">
-<div class="container">
+«»
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
-<div class="header">
-
-<img
-  class="logo"
-  src="https://commons.wikimedia.org/wiki/Special:FilePath/Os_Belenenses.png"
-  alt="Logótipo do Clube de Futebol Os Belenenses"
->
-
-<div class="header-title">
-
-<h1>ESTATÍSTICAS EM DIRETO — GUARDA-REDES</h1>
-
-<div class="sub">
+<div class="header-title"><h1>
+ESTATÍSTICAS EM DIRETO — GUARDA-REDES
+</h1><div class="sub">
 CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
-</div>
-
-</div>
-
-<div></div>
-
-</div>
-
-
-<!-- =========================
-     JOGO
-========================= -->
-
-<div class="match-info">
-
-<div class="field">
-
-<label>COMPETIÇÃO</label>
-
-<div class="competition-name">
+</div></div><div></div></div><!-- COMPETIÇÃO E JOGO --><div class="match-info"><div class="field"><label>
+COMPETIÇÃO
+</label><div class="competition-name">
 CD I DIVISÃO SENIORES FEMININA FUTSAL
-</div>
+</div></div><div class="field"><label for="game">
+JOGO
+</label><input
+id="game"
+type="text"
+placeholder="Ex.: Belenenses x Benfica"
 
-</div>
+«»
 
-<div class="field">
-
-<label for="game">JOGO</label>
-
-<input
-  id="game"
-  type="text"
-  placeholder="Ex.: Belenenses x Benfica"
->
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     CONTROLOS
-========================= -->
-
-<div class="controls">
-
-<div class="control-box">
-
-<div class="control-title">
+</div></div><!-- CONTROLOS --><div class="controls"><div class="control-box"><div class="control-title">
 GUARDA-REDES
-</div>
-
-<select id="goalkeeper">
-
-<option value="Eli">Eli</option>
-<option value="Sara Augusto">Sara Augusto</option>
-<option value="Joana Neves">Joana Neves</option>
-<option value="Penelope">Penelope</option>
-
-</select>
-
-</div>
-
-
-<div class="control-box">
-
-<div class="control-title">
+</div><select id="goalkeeper"><option value="Eli">
+Eli
+</option><option value="Sara Augusto">
+Sara Augusto
+</option><option value="Joana Neves">
+Joana Neves
+</option><option value="Penelope">
+Penelope
+</option></select></div><div class="control-box"><div class="control-title">
 PARTE
-</div>
-
-<select id="half">
-
-<option value="1">1.ª Parte</option>
-<option value="2">2.ª Parte</option>
-
-</select>
-
-</div>
-
-
-<div class="control-box timer">
-
-<div class="control-title">
+</div><select id="half"><option value="1">
+1.ª Parte
+</option><option value="2">
+2.ª Parte
+</option></select></div><div class="control-box timer"><div class="control-title">
 TEMPO
-</div>
-
-<div id="timer" class="timer-display">
+</div><div
+id="timer"
+class="timer-display"
+>
 20:00
-</div>
+</div><div class="timer-buttons"><button
+id="startBtn"
+class="success"
 
-<div class="timer-buttons">
+«»
 
-<button id="startBtn" class="success">
 INICIAR
 </button>
 
-<button id="pauseBtn" class="secondary">
+<button
+id="pauseBtn"
+class="secondary"
+
+«»
+
 PAUSAR
 </button>
 
-<button id="resetTimerBtn" class="danger">
+<button
+id="resetTimerBtn"
+class="danger"
+
+«»
+
 RESET
 </button>
 
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     ESTATÍSTICAS
-========================= -->
-
-<div class="stats-grid">
-
-
-<!-- DEFESA -->
-
-<div class="category">
-
-<div class="category-title">
+</div></div></div><!-- ESTATÍSTICAS --><div class="stats-grid"><!-- DEFESA --><div class="category"><div class="category-title">
 DEFESA
-</div>
-
-<div class="stat-row">
-
-<div class="stat-name">
+</div><div class="stat-row"><div class="stat-name">
 Defesa de remate
-</div>
-
-<div class="stat-count" id="defesa-remate">
+</div><div
+class="stat-count"
+id="defesa-remate"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('defesa-remate',-1)">
+onclick="changeStat('defesa-remate',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('defesa-remate',1)">
-+
-</button>
+onclick="changeStat('defesa-remate',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Defesa 1x1
-</div>
-
-<div class="stat-count" id="defesa-1x1">
+</div><div
+class="stat-count"
+id="defesa-1x1"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('defesa-1x1',-1)">
+onclick="changeStat('defesa-1x1',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('defesa-1x1',1)">
-+
-</button>
+onclick="changeStat('defesa-1x1',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Defesa com os pés
-</div>
-
-<div class="stat-count" id="defesa-pes">
+</div><div
+class="stat-count"
+id="defesa-pes"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('defesa-pes',-1)">
+onclick="changeStat('defesa-pes',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('defesa-pes',1)">
-+
-</button>
+onclick="changeStat('defesa-pes',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Defesa aérea
-</div>
-
-<div class="stat-count" id="defesa-aerea">
+</div><div
+class="stat-count"
+id="defesa-aerea"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('defesa-aerea',-1)">
+onclick="changeStat('defesa-aerea',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('defesa-aerea',1)">
-+
-</button>
+onclick="changeStat('defesa-aerea',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-</div>
-
-
-<!-- JOGO OFENSIVO -->
-
-<div class="category">
-
-<div class="category-title">
+</button></div></div></div><!-- JOGO OFENSIVO --><div class="category"><div class="category-title">
 JOGO OFENSIVO
-</div>
-
-<div class="stat-row">
-
-<div class="stat-name">
+</div><div class="stat-row"><div class="stat-name">
 Passe curto
-</div>
-
-<div class="stat-count" id="passe-curto">
+</div><div
+class="stat-count"
+id="passe-curto"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('passe-curto',-1)">
+onclick="changeStat('passe-curto',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('passe-curto',1)">
-+
-</button>
+onclick="changeStat('passe-curto',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Passe longo
-</div>
-
-<div class="stat-count" id="passe-longo">
+</div><div
+class="stat-count"
+id="passe-longo"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('passe-longo',-1)">
+onclick="changeStat('passe-longo',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('passe-longo',1)">
-+
-</button>
+onclick="changeStat('passe-longo',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Lançamento
-</div>
-
-<div class="stat-count" id="lancamento">
+</div><div
+class="stat-count"
+id="lancamento"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('lancamento',-1)">
+onclick="changeStat('lancamento',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('lancamento',1)">
-+
-</button>
+onclick="changeStat('lancamento',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Jogo com os pés
-</div>
-
-<div class="stat-count" id="jogo-pes">
+</div><div
+class="stat-count"
+id="jogo-pes"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('jogo-pes',-1)">
+onclick="changeStat('jogo-pes',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('jogo-pes',1)">
-+
-</button>
+onclick="changeStat('jogo-pes',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-</div>
-
-
-<!-- ORGANIZAÇÃO -->
-
-<div class="category">
-
-<div class="category-title">
+</button></div></div></div><!-- ORGANIZAÇÃO --><div class="category"><div class="category-title">
 ORGANIZAÇÃO
-</div>
-
-<div class="stat-row">
-
-<div class="stat-name">
+</div><div class="stat-row"><div class="stat-name">
 Comunicação
-</div>
-
-<div class="stat-count" id="comunicacao">
+</div><div
+class="stat-count"
+id="comunicacao"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('comunicacao',-1)">
+onclick="changeStat('comunicacao',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('comunicacao',1)">
-+
-</button>
+onclick="changeStat('comunicacao',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Posicionamento
-</div>
-
-<div class="stat-count" id="posicionamento">
+</div><div
+class="stat-count"
+id="posicionamento"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('posicionamento',-1)">
+onclick="changeStat('posicionamento',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('posicionamento',1)">
-+
-</button>
+onclick="changeStat('posicionamento',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Cobertura
-</div>
-
-<div class="stat-count" id="cobertura">
+</div><div
+class="stat-count"
+id="cobertura"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('cobertura',-1)">
+onclick="changeStat('cobertura',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('cobertura',1)">
-+
-</button>
+onclick="changeStat('cobertura',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Orientação defensiva
-</div>
-
-<div class="stat-count" id="orientacao">
+</div><div
+class="stat-count"
+id="orientacao"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('orientacao',-1)">
+onclick="changeStat('orientacao',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('orientacao',1)">
-+
-</button>
+onclick="changeStat('orientacao',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-</div>
-
-
-<!-- AÇÕES ADVERSÁRIAS -->
-
-<div class="category">
-
-<div class="category-title">
+</button></div></div></div><!-- AÇÕES ADVERSÁRIAS --><div class="category"><div class="category-title">
 AÇÕES ADVERSÁRIAS
-</div>
-
-<div class="stat-row">
-
-<div class="stat-name">
+</div><div class="stat-row"><div class="stat-name">
 Remate defendido
-</div>
-
-<div class="stat-count" id="remate-defendido">
+</div><div
+class="stat-count"
+id="remate-defendido"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('remate-defendido',-1)">
+onclick="changeStat('remate-defendido',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('remate-defendido',1)">
-+
-</button>
+onclick="changeStat('remate-defendido',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Golo sofrido
-</div>
-
-<div class="stat-count" id="golo-sofrido">
+</div><div
+class="stat-count"
+id="golo-sofrido"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('golo-sofrido',-1)">
+onclick="changeStat('golo-sofrido',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('golo-sofrido',1)">
-+
-</button>
+onclick="changeStat('golo-sofrido',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 1x1 adversário
-</div>
-
-<div class="stat-count" id="adversario-1x1">
+</div><div
+class="stat-count"
+id="adversario-1x1"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('adversario-1x1',-1)">
+onclick="changeStat('adversario-1x1',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('adversario-1x1',1)">
-+
-</button>
+onclick="changeStat('adversario-1x1',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-
-<div class="stat-row">
-
-<div class="stat-name">
+</button></div></div><div class="stat-row"><div class="stat-name">
 Bola parada
-</div>
-
-<div class="stat-count" id="bola-parada">
+</div><div
+class="stat-count"
+id="bola-parada"
+>
 0
-</div>
-
-<div class="stat-buttons">
-
-<button
+</div><div class="stat-buttons"><button
 class="minus"
-onclick="changeStat('bola-parada',-1)">
+onclick="changeStat('bola-parada',-1)"
+
+«»
+
 −
 </button>
 
 <button
 class="plus"
-onclick="changeStat('bola-parada',1)">
-+
-</button>
+onclick="changeStat('bola-parada',1)"
 
-</div>
+«»
 
-</div>
++ 
 
-</div>
-
-</div>
-
-
-<!-- =========================
-     BOTÕES
-========================= -->
-
-<div class="footer">
-
-<button onclick="saveData()">
+</button></div></div></div></div><!-- BOTÕES --><div class="footer"><button onclick="saveData()">
 GUARDAR
-</button>
-
-<button
+</button><button
 class="secondary"
-onclick="resetStats()">
+onclick="resetStats()"
+
+«»
+
 LIMPAR ESTATÍSTICAS
 </button>
 
 <button onclick="window.print()">
 IMPRIMIR / PDF
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-<script>
+</button></div></div>
+</div><script>
 
 const statIds=[
+
 'defesa-remate',
 'defesa-1x1',
 'defesa-pes',
 'defesa-aerea',
+
 'passe-curto',
 'passe-longo',
 'lancamento',
 'jogo-pes',
+
 'comunicacao',
 'posicionamento',
 'cobertura',
 'orientacao',
+
 'remate-defendido',
 'golo-sofrido',
 'adversario-1x1',
 'bola-parada'
+
 ];
 
 
@@ -1034,7 +827,9 @@ statIds.forEach(id=>{
 const element=document.getElementById(id);
 
 if(element){
+
 element.textContent=stats[id]||0;
+
 }
 
 });
@@ -1077,6 +872,7 @@ localStorage.getItem('grMatchInfo')||'{}'
 
 
 const gameInput=document.getElementById('game');
+
 
 gameInput.value=matchInfo.game||'';
 
@@ -1128,6 +924,8 @@ loadStats();
 }
 
 
+/* TEMPORIZADOR — 20 MINUTOS POR PARTE */
+
 let totalSeconds=20*60;
 
 let timerInterval=null;
@@ -1140,6 +938,7 @@ const minutes=Math.floor(totalSeconds/60);
 const seconds=totalSeconds%60;
 
 document.getElementById('timer').textContent=
+
 String(minutes).padStart(2,'0')+
 ':'+
 String(seconds).padStart(2,'0');
@@ -1197,23 +996,33 @@ updateTimer();
 
 
 document.getElementById('startBtn')
-.addEventListener('click',startTimer);
+.addEventListener(
+'click',
+startTimer
+);
 
 
 document.getElementById('pauseBtn')
-.addEventListener('click',pauseTimer);
+.addEventListener(
+'click',
+pauseTimer
+);
 
 
 document.getElementById('resetTimerBtn')
-.addEventListener('click',resetTimer);
+.addEventListener(
+'click',
+resetTimer
+);
 
 
 document.getElementById('half')
-.addEventListener('change',()=>{
-
+.addEventListener(
+'change',
+()=>{
 resetTimer();
-
-});
+}
+);
 
 
 loadStats();
@@ -1231,7 +1040,5 @@ navigator.serviceWorker.register('./sw.js');
 
 }
 
-</script>
-
-</body>
+</script></body>
 </html>
