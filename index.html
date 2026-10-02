@@ -45,29 +45,16 @@ body{
 /* CABEÇALHO */
 
 .header{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  margin-bottom:6px;
-}
-
-.logo{
-  width:70px;
-  height:70px;
-  object-fit:contain;
-  display:block;
+  text-align:center;
 }
 
 h1{
   margin:0;
-  text-align:center;
-  font-size:27px;
+  font-size:28px;
   color:#17365d;
 }
 
 .sub{
-  text-align:center;
   margin-top:6px;
   font-weight:bold;
   font-size:15px;
@@ -196,7 +183,7 @@ button.orange{
   background:#d97706;
 }
 
-/* CONTROLO DA GR */
+/* GUARDA-REDES */
 
 .goalkeeper-control{
   margin-top:15px;
@@ -254,7 +241,7 @@ button.orange{
   color:white;
   text-align:center;
   padding:12px;
-  font-size:16px;
+  font-size:17px;
   font-weight:900;
 }
 
@@ -275,7 +262,7 @@ button.orange{
 .stat-name{
   font-size:16px;
   font-weight:bold;
-  line-height:1.2;
+  line-height:1.25;
 }
 
 .stat-count{
@@ -354,12 +341,11 @@ button.orange{
     max-width:none;
   }
 
-  .timer-buttons,
   .goalkeeper-control,
+  .timer-buttons,
   .footer{
     display:none;
   }
-
 }
 </style>
 </head>
@@ -373,54 +359,45 @@ button.orange{
 
 <div class="header">
 
-  <!--
-  Se quiseres colocar o logótipo mais tarde,
-  basta substituir o src pelo link direto da imagem.
-  -->
-  <img
-    class="logo"
-    src=""
-    alt=""
-    style="display:none;"
-  >
+<h1>
+ESTATÍSTICAS EM DIRETO — GUARDA-REDES
+</h1>
 
-  <div>
-    <h1>ESTATÍSTICAS EM DIRETO — GUARDA-REDES</h1>
-
-    <div class="sub">
-      CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
-    </div>
-  </div>
+<div class="sub">
+CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
+</div>
 
 </div>
 
 
-<!-- INFORMAÇÃO DO JOGO -->
+<!-- JOGO -->
 
 <div class="match-info">
 
-  <div class="field">
+<div class="field">
 
-    <label>COMPETIÇÃO</label>
+<label>COMPETIÇÃO</label>
 
-    <div class="competition-name">
-      CD I DIVISÃO SENIORES FEMININA FUTSAL
-    </div>
+<div class="competition-name">
+CD I DIVISÃO SENIORES FEMININA FUTSAL
+</div>
 
-  </div>
+</div>
 
 
-  <div class="field">
+<div class="field">
 
-    <label for="game">JOGO</label>
+<label for="game">
+JOGO
+</label>
 
-    <input
-      id="game"
-      type="text"
-      placeholder="Ex.: Belenenses x Benfica"
-    >
+<input
+id="game"
+type="text"
+placeholder="Ex.: Belenenses x Benfica"
+>
 
-  </div>
+</div>
 
 </div>
 
@@ -429,89 +406,89 @@ button.orange{
 
 <div class="controls">
 
-  <div class="control-box">
+<div class="control-box">
 
-    <div class="control-title">
-      GUARDA-REDES
-    </div>
+<div class="control-title">
+GUARDA-REDES
+</div>
 
-    <select id="goalkeeper">
+<select id="goalkeeper">
 
-      <option value="Eli">
-        Eli
-      </option>
+<option value="Eli">
+Eli
+</option>
 
-      <option value="Sara Augusto">
-        Sara Augusto
-      </option>
+<option value="Sara Augusto">
+Sara Augusto
+</option>
 
-      <option value="Joana Neves">
-        Joana Neves
-      </option>
+<option value="Joana Neves">
+Joana Neves
+</option>
 
-      <option value="Penelope">
-        Penelope
-      </option>
+<option value="Penelope">
+Penelope
+</option>
 
-    </select>
+</select>
 
-  </div>
-
-
-  <div class="control-box">
-
-    <div class="control-title">
-      PARTE
-    </div>
-
-    <select id="half">
-
-      <option value="1">
-        1.ª Parte
-      </option>
-
-      <option value="2">
-        2.ª Parte
-      </option>
-
-    </select>
-
-  </div>
+</div>
 
 
-  <div class="control-box timer">
+<div class="control-box">
 
-    <div class="control-title">
-      TEMPO DE JOGO
-    </div>
+<div class="control-title">
+PARTE
+</div>
 
-    <div id="timer" class="timer-display">
-      20:00
-    </div>
+<select id="half">
 
-    <div class="timer-buttons">
+<option value="1">
+1.ª Parte
+</option>
 
-      <button
-        id="startBtn"
-        class="success">
-        ▶ INICIAR
-      </button>
+<option value="2">
+2.ª Parte
+</option>
 
-      <button
-        id="pauseBtn"
-        class="secondary">
-        ⏸ PAUSAR
-      </button>
+</select>
 
-      <button
-        id="resetTimerBtn"
-        class="danger">
-        ↺ RESET
-      </button>
+</div>
 
-    </div>
 
-  </div>
+<div class="control-box timer">
+
+<div class="control-title">
+TEMPO DE JOGO
+</div>
+
+<div id="timer" class="timer-display">
+20:00
+</div>
+
+<div class="timer-buttons">
+
+<button
+id="startBtn"
+class="success">
+▶ INICIAR
+</button>
+
+<button
+id="pauseBtn"
+class="secondary">
+⏸ PAUSAR
+</button>
+
+<button
+id="resetTimerBtn"
+class="danger">
+↺ RESET
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -520,42 +497,41 @@ button.orange{
 
 <div class="goalkeeper-control">
 
-  <div class="control-title">
-    CONTROLO DA GUARDA-REDES
-  </div>
+<div class="control-title">
+CONTROLO DA GUARDA-REDES
+</div>
 
-  <div class="goalkeeper-buttons">
+<div class="goalkeeper-buttons">
 
-    <button
-      id="startingBtn"
-      class="success">
-      ⭐ CINCO INICIAL
-    </button>
+<button
+id="startingBtn"
+class="success">
+⭐ CINCO INICIAL
+</button>
 
-    <button
-      id="enterBtn"
-      class="success">
-      ▶ ENTRAR EM CAMPO
-    </button>
+<button
+id="enterBtn"
+class="success">
+▶ ENTRAR EM CAMPO
+</button>
 
-    <button
-      id="exitBtn"
-      class="orange">
-      ⏹ SAIR DE CAMPO
-    </button>
+<button
+id="exitBtn"
+class="orange">
+⏹ SAIR DE CAMPO
+</button>
 
-  </div>
+</div>
 
+<div class="playing-time">
 
-  <div class="playing-time">
+TEMPO EM CAMPO DA GR SELECIONADA:
 
-    TEMPO EM CAMPO DA GR SELECIONADA:
+<strong id="playingTime">
+00:00
+</strong>
 
-    <strong id="playingTime">
-      00:00
-    </strong>
-
-  </div>
+</div>
 
 </div>
 
@@ -565,542 +541,790 @@ button.orange{
 <div class="stats-grid">
 
 
-<!-- DEFESA -->
+<!-- ==================== DEFESA ==================== -->
 
 <div class="category">
 
-  <div class="category-title">
-    DEFESA
-  </div>
+<div class="category-title">
+DEFESA
+</div>
 
 
-  <div class="stat-row">
+<div class="stat-row">
 
-    <div class="stat-name">
-      Defesa de remate
-    </div>
+<div class="stat-name">
+Defesas completas
+</div>
 
-    <div
-      class="stat-count"
-      id="defesa-remate">
-      0
-    </div>
+<div
+class="stat-count"
+id="defesas-completas">
+0
+</div>
 
-    <div class="stat-buttons">
+<div class="stat-buttons">
 
-      <button
-        class="minus"
-        onclick="changeStat('defesa-remate',-1)">
-        −
-      </button>
+<button
+class="minus"
+onclick="changeStat('defesas-completas',-1)">
+−
+</button>
 
-      <button
-        class="plus"
-        onclick="changeStat('defesa-remate',1)">
-        +
-      </button>
+<button
+class="plus"
+onclick="changeStat('defesas-completas',1)">
++
+</button>
 
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Defesa 1x1
-    </div>
-
-    <div
-      class="stat-count"
-      id="defesa-1x1">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('defesa-1x1',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('defesa-1x1',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Defesa com os pés
-    </div>
-
-    <div
-      class="stat-count"
-      id="defesa-pes">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('defesa-pes',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('defesa-pes',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Defesa aérea
-    </div>
-
-    <div
-      class="stat-count"
-      id="defesa-aerea">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('defesa-aerea',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('defesa-aerea',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
-<!-- JOGO OFENSIVO -->
+<div class="stat-row">
 
-<div class="category">
+<div class="stat-name">
+Defesas sem posse
+</div>
 
-  <div class="category-title">
-    JOGO OFENSIVO
-  </div>
+<div
+class="stat-count"
+id="defesas-sem-posse">
+0
+</div>
 
+<div class="stat-buttons">
 
-  <div class="stat-row">
+<button
+class="minus"
+onclick="changeStat('defesas-sem-posse',-1)">
+−
+</button>
 
-    <div class="stat-name">
-      Passe curto
-    </div>
+<button
+class="plus"
+onclick="changeStat('defesas-sem-posse',1)">
++
+</button>
 
-    <div
-      class="stat-count"
-      id="passe-curto">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('passe-curto',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('passe-curto',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Passe longo
-    </div>
-
-    <div
-      class="stat-count"
-      id="passe-longo">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('passe-longo',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('passe-longo',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Lançamento
-    </div>
-
-    <div
-      class="stat-count"
-      id="lancamento">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('lancamento',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('lancamento',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Jogo com os pés
-    </div>
-
-    <div
-      class="stat-count"
-      id="jogo-pes">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('jogo-pes',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('jogo-pes',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
-<!-- ORGANIZAÇÃO -->
+<div class="stat-row">
 
-<div class="category">
+<div class="stat-name">
+Defesa de curta distância
+</div>
 
-  <div class="category-title">
-    ORGANIZAÇÃO
-  </div>
+<div
+class="stat-count"
+id="defesa-curta-distancia">
+0
+</div>
 
+<div class="stat-buttons">
 
-  <div class="stat-row">
+<button
+class="minus"
+onclick="changeStat('defesa-curta-distancia',-1)">
+−
+</button>
 
-    <div class="stat-name">
-      Comunicação
-    </div>
+<button
+class="plus"
+onclick="changeStat('defesa-curta-distancia',1)">
++
+</button>
 
-    <div
-      class="stat-count"
-      id="comunicacao">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('comunicacao',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('comunicacao',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Posicionamento
-    </div>
-
-    <div
-      class="stat-count"
-      id="posicionamento">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('posicionamento',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('posicionamento',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Cobertura
-    </div>
-
-    <div
-      class="stat-count"
-      id="cobertura">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('cobertura',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('cobertura',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Orientação defensiva
-    </div>
-
-    <div
-      class="stat-count"
-      id="orientacao">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('orientacao',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('orientacao',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
-<!-- AÇÕES ADVERSÁRIAS -->
+<div class="stat-row">
+
+<div class="stat-name">
+Duelos 1x1
+</div>
+
+<div
+class="stat-count"
+id="duelos-1x1">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('duelos-1x1',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('duelos-1x1',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Saídas
+</div>
+
+<div
+class="stat-count"
+id="saidas">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('saidas',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('saidas',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Bolas divididas / Antecipações
+</div>
+
+<div
+class="stat-count"
+id="bolas-divididas">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('bolas-divididas',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('bolas-divididas',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Coberturas
+</div>
+
+<div
+class="stat-count"
+id="coberturas">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('coberturas',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('coberturas',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Defesa de livre direto
+</div>
+
+<div
+class="stat-count"
+id="defesa-livre-direto">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('defesa-livre-direto',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('defesa-livre-direto',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Defesa de 10 metros
+</div>
+
+<div
+class="stat-count"
+id="defesa-10-metros">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('defesa-10-metros',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('defesa-10-metros',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Defesa de pénalti
+</div>
+
+<div
+class="stat-count"
+id="defesa-penalti">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('defesa-penalti',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('defesa-penalti',1)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ==================== JOGO OFENSIVO ==================== -->
 
 <div class="category">
 
-  <div class="category-title">
-    AÇÕES ADVERSÁRIAS
-  </div>
+<div class="category-title">
+JOGO OFENSIVO
+</div>
 
 
-  <div class="stat-row">
+<div class="stat-row">
 
-    <div class="stat-name">
-      Remate defendido
-    </div>
+<div class="stat-name">
+Lançamentos com os pés
+</div>
 
-    <div
-      class="stat-count"
-      id="remate-defendido">
-      0
-    </div>
+<div
+class="stat-count"
+id="lancamentos-pes">
+0
+</div>
 
-    <div class="stat-buttons">
+<div class="stat-buttons">
 
-      <button
-        class="minus"
-        onclick="changeStat('remate-defendido',-1)">
-        −
-      </button>
+<button
+class="minus"
+onclick="changeStat('lancamentos-pes',-1)">
+−
+</button>
 
-      <button
-        class="plus"
-        onclick="changeStat('remate-defendido',1)">
-        +
-      </button>
+<button
+class="plus"
+onclick="changeStat('lancamentos-pes',1)">
++
+</button>
 
-    </div>
+</div>
 
-  </div>
-
-
-  <div class="stat-row">
-
-    <div class="stat-name">
-      Golo sofrido
-    </div>
-
-    <div
-      class="stat-count"
-      id="golo-sofrido">
-      0
-    </div>
-
-    <div class="stat-buttons">
-
-      <button
-        class="minus"
-        onclick="changeStat('golo-sofrido',-1)">
-        −
-      </button>
-
-      <button
-        class="plus"
-        onclick="changeStat('golo-sofrido',1)">
-        +
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="stat-row">
+<div class="stat-row">
 
-    <div class="stat-name">
-      1x1 adversário
-    </div>
+<div class="stat-name">
+Lançamentos com as mãos
+</div>
 
-    <div
-      class="stat-count"
-      id="adversario-1x1">
-      0
-    </div>
+<div
+class="stat-count"
+id="lancamentos-maos">
+0
+</div>
 
-    <div class="stat-buttons">
+<div class="stat-buttons">
 
-      <button
-        class="minus"
-        onclick="changeStat('adversario-1x1',-1)">
-        −
-      </button>
+<button
+class="minus"
+onclick="changeStat('lancamentos-maos',-1)">
+−
+</button>
 
-      <button
-        class="plus"
-        onclick="changeStat('adversario-1x1',1)">
-        +
-      </button>
+<button
+class="plus"
+onclick="changeStat('lancamentos-maos',1)">
++
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 
-  <div class="stat-row">
+<div class="stat-row">
 
-    <div class="stat-name">
-      Bola parada
-    </div>
+<div class="stat-name">
+Jogo de pés
+</div>
 
-    <div
-      class="stat-count"
-      id="bola-parada">
-      0
-    </div>
+<div
+class="stat-count"
+id="jogo-pes">
+0
+</div>
 
-    <div class="stat-buttons">
+<div class="stat-buttons">
 
-      <button
-        class="minus"
-        onclick="changeStat('bola-parada',-1)">
-        −
-      </button>
+<button
+class="minus"
+onclick="changeStat('jogo-pes',-1)">
+−
+</button>
 
-      <button
-        class="plus"
-        onclick="changeStat('bola-parada',1)">
-        +
-      </button>
+<button
+class="plus"
+onclick="changeStat('jogo-pes',1)">
++
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Reposições rápidas
+</div>
+
+<div
+class="stat-count"
+id="reposicoes-rapidas">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('reposicoes-rapidas',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('reposicoes-rapidas',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Assistências
+</div>
+
+<div
+class="stat-count"
+id="assistencias">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('assistencias',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('assistencias',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Remates
+</div>
+
+<div
+class="stat-count"
+id="remates">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('remates',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('remates',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Golos
+</div>
+
+<div
+class="stat-count"
+id="golos">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('golos',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('golos',1)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ==================== ORGANIZAÇÃO ==================== -->
+
+<div class="category">
+
+<div class="category-title">
+ORGANIZAÇÃO
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Saídas de pressão
+</div>
+
+<div
+class="stat-count"
+id="saidas-pressao">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('saidas-pressao',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('saidas-pressao',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Intervenções decisivas
+</div>
+
+<div
+class="stat-count"
+id="intervencoes-decisivas">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('intervencoes-decisivas',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('intervencoes-decisivas',1)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ==================== AÇÕES ADVERSÁRIAS ==================== -->
+
+<div class="category">
+
+<div class="category-title">
+AÇÕES ADVERSÁRIAS
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Finalizações adversárias
+</div>
+
+<div
+class="stat-count"
+id="finalizacoes-adversarias">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('finalizacoes-adversarias',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('finalizacoes-adversarias',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Golos sofridos
+</div>
+
+<div
+class="stat-count"
+id="golos-sofridos">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('golos-sofridos',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('golos-sofridos',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Postes / Trave
+</div>
+
+<div
+class="stat-count"
+id="postes-trave">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('postes-trave',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('postes-trave',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Erro GR — Finalização adversária
+</div>
+
+<div
+class="stat-count"
+id="erro-gr-finalizacao">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('erro-gr-finalizacao',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('erro-gr-finalizacao',1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-row">
+
+<div class="stat-name">
+Perdas de bola
+</div>
+
+<div
+class="stat-count"
+id="perdas-bola">
+0
+</div>
+
+<div class="stat-buttons">
+
+<button
+class="minus"
+onclick="changeStat('perdas-bola',-1)">
+−
+</button>
+
+<button
+class="plus"
+onclick="changeStat('perdas-bola',1)">
++
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1111,19 +1335,19 @@ button.orange{
 
 <div class="footer">
 
-  <button onclick="saveData()">
-    💾 GUARDAR
-  </button>
+<button onclick="saveData()">
+💾 GUARDAR
+</button>
 
-  <button
-    class="secondary"
-    onclick="resetStats()">
-    LIMPAR ESTATÍSTICAS DA GR
-  </button>
+<button
+class="secondary"
+onclick="resetStats()">
+LIMPAR ESTATÍSTICAS DA GR
+</button>
 
-  <button onclick="window.print()">
-    🖨 IMPRIMIR / PDF
-  </button>
+<button onclick="window.print()">
+🖨 IMPRIMIR / PDF
+</button>
 
 </div>
 
@@ -1134,136 +1358,129 @@ button.orange{
 <script>
 
 /* =========================================================
-   CONFIGURAÇÃO
+   OS 24 INDICADORES
 ========================================================= */
 
 const statIds = [
 
-  'defesa-remate',
-  'defesa-1x1',
-  'defesa-pes',
-  'defesa-aerea',
+'defesas-completas',
+'defesas-sem-posse',
+'defesa-curta-distancia',
+'duelos-1x1',
+'saidas',
+'bolas-divididas',
+'coberturas',
+'defesa-livre-direto',
+'defesa-10-metros',
+'defesa-penalti',
 
-  'passe-curto',
-  'passe-longo',
-  'lancamento',
-  'jogo-pes',
+'lancamentos-pes',
+'lancamentos-maos',
+'jogo-pes',
+'reposicoes-rapidas',
+'assistencias',
+'remates',
+'golos',
 
-  'comunicacao',
-  'posicionamento',
-  'cobertura',
-  'orientacao',
+'saidas-pressao',
+'intervencoes-decisivas',
 
-  'remate-defendido',
-  'golo-sofrido',
-  'adversario-1x1',
-  'bola-parada'
-
-];
-
-
-const goalkeepers = [
-
-  'Eli',
-  'Sara Augusto',
-  'Joana Neves',
-  'Penelope'
+'finalizacoes-adversarias',
+'golos-sofridos',
+'postes-trave',
+'erro-gr-finalizacao',
+'perdas-bola'
 
 ];
 
 
 /* =========================================================
-   ESTADO PRINCIPAL
+   DADOS INDIVIDUAIS
 ========================================================= */
 
 let stats = JSON.parse(
-  localStorage.getItem('grStatsIndividual') || '{}'
+localStorage.getItem('grStatsIndividual') || '{}'
+);
+
+let playingTime = JSON.parse(
+localStorage.getItem('grPlayingTime') || '{}'
 );
 
 
-/*
-   Estrutura:
-
-   estatistica|GR|parte|indicador
-
-   Exemplo:
-
-   estatistica|Eli|1|defesa-remate
-
-   Assim cada GR tem os seus próprios valores.
-*/
-
+/* =========================================================
+   CHAVE DA ESTATÍSTICA
+   GR + PARTE + INDICADOR
+========================================================= */
 
 function statKey(id){
 
-  return (
+const goalkeeper =
+document.getElementById('goalkeeper').value;
 
-    'estatistica|' +
+const half =
+document.getElementById('half').value;
 
-    document.getElementById('goalkeeper').value +
-
-    '|' +
-
-    document.getElementById('half').value +
-
-    '|' +
-
-    id
-
-  );
+return (
+'estatistica|' +
+goalkeeper +
+'|' +
+half +
+'|' +
+id
+);
 
 }
 
 
 /* =========================================================
-   ALTERAR ESTATÍSTICAS
+   ALTERAR INDICADOR
 ========================================================= */
 
 function changeStat(id,value){
 
-  const key = statKey(id);
+const key = statKey(id);
 
-  if(typeof stats[key] !== 'number'){
-    stats[key] = 0;
-  }
+if(typeof stats[key] !== 'number'){
+stats[key] = 0;
+}
 
-  stats[key] += value;
+stats[key] += value;
 
-  if(stats[key] < 0){
-    stats[key] = 0;
-  }
+if(stats[key] < 0){
+stats[key] = 0;
+}
 
-  saveStats();
+saveStats();
 
-  loadStats();
+loadStats();
 
 }
 
 
 /* =========================================================
-   CARREGAR ESTATÍSTICAS DA GR SELECIONADA
+   CARREGAR INDICADORES DA GR SELECIONADA
 ========================================================= */
 
 function loadStats(){
 
-  statIds.forEach(id => {
+statIds.forEach(id => {
 
-    const element =
-      document.getElementById(id);
+const element =
+document.getElementById(id);
 
-    if(!element){
-      return;
-    }
+if(!element){
+return;
+}
 
-    const key = statKey(id);
+const key =
+statKey(id);
 
-    element.textContent =
-      stats[key] || 0;
+element.textContent =
+stats[key] || 0;
 
-  });
+});
 
-
-  updatePlayingTime();
+updatePlayingTime();
 
 }
 
@@ -1274,54 +1491,47 @@ function loadStats(){
 
 function saveStats(){
 
-  localStorage.setItem(
-    'grStatsIndividual',
-    JSON.stringify(stats)
-  );
+localStorage.setItem(
+'grStatsIndividual',
+JSON.stringify(stats)
+);
 
 }
 
 
 /* =========================================================
-   INFORMAÇÃO DO JOGO
+   JOGO
 ========================================================= */
 
 const gameInput =
-  document.getElementById('game');
-
+document.getElementById('game');
 
 let matchInfo =
-  JSON.parse(
-    localStorage.getItem('grMatchInfo') || '{}'
-  );
-
+JSON.parse(
+localStorage.getItem('grMatchInfo') || '{}'
+);
 
 gameInput.value =
-  matchInfo.game || '';
-
+matchInfo.game || '';
 
 gameInput.addEventListener(
-  'input',
-  saveMatchInfo
+'input',
+() => {
+
+matchInfo.game =
+gameInput.value;
+
+localStorage.setItem(
+'grMatchInfo',
+JSON.stringify(matchInfo)
+);
+
+}
 );
 
 
-function saveMatchInfo(){
-
-  matchInfo.game =
-    gameInput.value;
-
-  localStorage.setItem(
-    'grMatchInfo',
-    JSON.stringify(matchInfo)
-  );
-
-}
-
-
 /* =========================================================
-   TEMPO DE JOGO
-   20 MINUTOS POR PARTE
+   TEMPO — 20 MINUTOS POR PARTE
 ========================================================= */
 
 const HALF_TIME = 20 * 60;
@@ -1334,52 +1544,61 @@ let timerRunning = false;
 
 
 /* =========================================================
-   TEMPO EM CAMPO DAS GUARDA-REDES
+   GUARDA-REDES EM CAMPO
 ========================================================= */
-
-
-/*
-   playing|GR|parte
-
-   Exemplo:
-
-   playing|Eli|1
-
-   Guarda quantos segundos a Eli esteve
-   efetivamente em campo na 1.ª parte.
-*/
-
-
-let playingTime =
-  JSON.parse(
-    localStorage.getItem('grPlayingTime') || '{}'
-  );
-
-
-/*
-   Guarda quem está atualmente em campo.
-
-   Não existe "nenhuma".
-
-   Sempre que uma GR entra,
-   essa passa a ser a GR em campo.
-*/
 
 let currentGoalkeeper = null;
 
 
 /* =========================================================
-   CHAVE DO TEMPO INDIVIDUAL
+   CHAVE DO TEMPO
 ========================================================= */
 
 function playingKey(goalkeeper,half){
 
-  return (
-    'playing|' +
-    goalkeeper +
-    '|' +
-    half
-  );
+return (
+'playing|' +
+goalkeeper +
+'|' +
+half
+);
+
+}
+
+
+/* =========================================================
+   FORMATAR TEMPO
+========================================================= */
+
+function formatTime(seconds){
+
+seconds =
+Math.max(0,Math.floor(seconds));
+
+const minutes =
+Math.floor(seconds / 60);
+
+const secs =
+seconds % 60;
+
+return (
+String(minutes).padStart(2,'0') +
+':' +
+String(secs).padStart(2,'0')
+);
+
+}
+
+
+/* =========================================================
+   ATUALIZAR RELÓGIO
+========================================================= */
+
+function updateTimer(){
+
+document.getElementById('timer')
+.textContent =
+formatTime(totalSeconds);
 
 }
 
@@ -1388,254 +1607,152 @@ function playingKey(goalkeeper,half){
    TEMPO DA GR SELECIONADA
 ========================================================= */
 
-function getPlayingTime(){
+function getSelectedPlayingTime(){
 
-  const goalkeeper =
-    document.getElementById('goalkeeper').value;
+const goalkeeper =
+document.getElementById('goalkeeper').value;
 
-  const half =
-    document.getElementById('half').value;
+const half =
+document.getElementById('half').value;
 
-  const key =
-    playingKey(goalkeeper,half);
+const key =
+playingKey(
+goalkeeper,
+half
+);
 
-  return playingTime[key] || 0;
+return playingTime[key] || 0;
 
 }
 
 
 /* =========================================================
-   MOSTRAR TEMPO
+   MOSTRAR TEMPO DA GR
 ========================================================= */
-
-function formatTime(seconds){
-
-  seconds =
-    Math.max(
-      0,
-      Math.floor(seconds)
-    );
-
-  const minutes =
-    Math.floor(seconds / 60);
-
-  const secs =
-    seconds % 60;
-
-  return (
-
-    String(minutes).padStart(2,'0') +
-
-    ':' +
-
-    String(secs).padStart(2,'0')
-
-  );
-
-}
-
-
-function updateTimer(){
-
-  document.getElementById('timer')
-    .textContent =
-    formatTime(totalSeconds);
-
-}
-
 
 function updatePlayingTime(){
 
-  document.getElementById('playingTime')
-    .textContent =
-    formatTime(getPlayingTime());
+document.getElementById('playingTime')
+.textContent =
+formatTime(
+getSelectedPlayingTime()
+);
 
 }
 
 
 /* =========================================================
-   ATUALIZAÇÃO DO TEMPO
+   CADA SEGUNDO
 ========================================================= */
 
 function tick(){
 
-  if(totalSeconds <= 0){
+if(totalSeconds <= 0){
 
-    pauseTimer();
+pauseTimer();
 
-    return;
+return;
 
-  }
+}
 
-
-  totalSeconds--;
-
-
-  /*
-     O relógio da GR só conta
-     se existir uma GR em campo.
-  */
-
-  if(currentGoalkeeper){
-
-    const half =
-      document.getElementById('half').value;
-
-    const key =
-      playingKey(
-        currentGoalkeeper,
-        half
-      );
+totalSeconds--;
 
 
-    if(typeof playingTime[key] !== 'number'){
-      playingTime[key] = 0;
-    }
+/*
+   Só contabiliza tempo da GR
+   se uma GR estiver efetivamente
+   em campo.
+*/
 
+if(currentGoalkeeper){
 
-    playingTime[key]++;
+const half =
+document.getElementById('half').value;
 
+const key =
+playingKey(
+currentGoalkeeper,
+half
+);
 
-    localStorage.setItem(
-      'grPlayingTime',
-      JSON.stringify(playingTime)
-    );
+if(typeof playingTime[key] !== 'number'){
+playingTime[key] = 0;
+}
 
-  }
+playingTime[key]++;
 
+localStorage.setItem(
+'grPlayingTime',
+JSON.stringify(playingTime)
+);
 
-  updateTimer();
+}
 
-  updatePlayingTime();
+updateTimer();
+
+updatePlayingTime();
 
 }
 
 
 /* =========================================================
-   INICIAR JOGO
+   INICIAR
 ========================================================= */
 
 function startTimer(){
 
-  if(timerRunning){
-    return;
-  }
+if(timerRunning){
+return;
+}
 
-  if(totalSeconds <= 0){
-    return;
-  }
+if(totalSeconds <= 0){
+return;
+}
 
+timerRunning = true;
 
-  timerRunning = true;
-
-
-  timerInterval =
-    setInterval(
-      tick,
-      1000
-    );
+timerInterval =
+setInterval(
+tick,
+1000
+);
 
 }
 
 
 /* =========================================================
-   PAUSAR JOGO
+   PAUSAR
 ========================================================= */
 
 function pauseTimer(){
 
-  if(timerInterval !== null){
+if(timerInterval !== null){
 
-    clearInterval(
-      timerInterval
-    );
+clearInterval(
+timerInterval
+);
 
-  }
+}
 
-  timerInterval = null;
+timerInterval = null;
 
-  timerRunning = false;
+timerRunning = false;
 
 }
 
 
 /* =========================================================
-   RESET DO TEMPO
+   RESET 20:00
 ========================================================= */
 
 function resetTimer(){
 
-  pauseTimer();
+pauseTimer();
 
-  totalSeconds =
-    HALF_TIME;
+totalSeconds =
+HALF_TIME;
 
-  updateTimer();
-
-}
-
-
-/* =========================================================
-   ENTRAR EM CAMPO
-========================================================= */
-
-function enterGoalkeeper(){
-
-  const goalkeeper =
-    document.getElementById('goalkeeper').value;
-
-
-  /*
-     Se já estava outra GR em campo,
-     ela sai automaticamente.
-  */
-
-  if(
-    currentGoalkeeper &&
-    currentGoalkeeper !== goalkeeper
-  ){
-
-    currentGoalkeeper =
-      null;
-
-  }
-
-
-  currentGoalkeeper =
-    goalkeeper;
-
-
-  updatePlayingTime();
-
-}
-
-
-/* =========================================================
-   SAIR DE CAMPO
-========================================================= */
-
-function exitGoalkeeper(){
-
-  /*
-     Apenas retira a GR atualmente
-     selecionada se for ela que está
-     em campo.
-  */
-
-  const goalkeeper =
-    document.getElementById('goalkeeper').value;
-
-
-  if(
-    currentGoalkeeper === goalkeeper
-  ){
-
-    currentGoalkeeper = null;
-
-  }
-
-
-  updatePlayingTime();
+updateTimer();
 
 }
 
@@ -1646,55 +1763,69 @@ function exitGoalkeeper(){
 
 function setStartingGoalkeeper(){
 
-  const goalkeeper =
-    document.getElementById('goalkeeper').value;
+const goalkeeper =
+document.getElementById('goalkeeper').value;
 
-
-  /*
-     A GR selecionada passa a ser
-     automaticamente a titular inicial.
-
-     Não é necessário criar outro
-     campo "estado".
-  */
-
-  currentGoalkeeper =
-    goalkeeper;
-
-
-  /*
-     Apenas marcamos que esta GR
-     começou o jogo.
-  */
-
-  const half =
-    document.getElementById('half').value;
-
-
-  localStorage.setItem(
-
-    'startingGoalkeeper|' + half,
-
-    goalkeeper
-
-  );
-
-
-  updatePlayingTime();
+currentGoalkeeper =
+goalkeeper;
 
 }
 
 
 /* =========================================================
-   MUDAR GR
+   ENTRAR EM CAMPO
+========================================================= */
+
+function enterGoalkeeper(){
+
+const goalkeeper =
+document.getElementById('goalkeeper').value;
+
+/*
+   A nova GR entra.
+   A anterior deixa de contar
+   automaticamente.
+*/
+
+currentGoalkeeper =
+goalkeeper;
+
+updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   SAIR DE CAMPO
+========================================================= */
+
+function exitGoalkeeper(){
+
+const goalkeeper =
+document.getElementById('goalkeeper').value;
+
+if(currentGoalkeeper === goalkeeper){
+
+currentGoalkeeper =
+null;
+
+}
+
+updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   MUDAR GUARDA-REDES
 ========================================================= */
 
 document
-  .getElementById('goalkeeper')
-  .addEventListener(
-    'change',
-    loadStats
-  );
+.getElementById('goalkeeper')
+.addEventListener(
+'change',
+loadStats
+);
 
 
 /* =========================================================
@@ -1702,34 +1833,25 @@ document
 ========================================================= */
 
 document
-  .getElementById('half')
-  .addEventListener(
-    'change',
-    () => {
+.getElementById('half')
+.addEventListener(
+'change',
+() => {
 
-      /*
-         Cada parte começa com
-         20 minutos.
+pauseTimer();
 
-         As estatísticas e o tempo
-         da parte anterior permanecem
-         guardados.
-      */
+totalSeconds =
+HALF_TIME;
 
-      pauseTimer();
+currentGoalkeeper =
+null;
 
-      totalSeconds =
-        HALF_TIME;
+updateTimer();
 
-      currentGoalkeeper =
-        null;
+loadStats();
 
-      updateTimer();
-
-      loadStats();
-
-    }
-  );
+}
+);
 
 
 /* =========================================================
@@ -1737,51 +1859,46 @@ document
 ========================================================= */
 
 document
-  .getElementById('startBtn')
-  .addEventListener(
-    'click',
-    startTimer
-  );
-
-
-document
-  .getElementById('pauseBtn')
-  .addEventListener(
-    'click',
-    pauseTimer
-  );
-
+.getElementById('startBtn')
+.addEventListener(
+'click',
+startTimer
+);
 
 document
-  .getElementById('resetTimerBtn')
-  .addEventListener(
-    'click',
-    resetTimer
-  );
-
-
-document
-  .getElementById('enterBtn')
-  .addEventListener(
-    'click',
-    enterGoalkeeper
-  );
-
+.getElementById('pauseBtn')
+.addEventListener(
+'click',
+pauseTimer
+);
 
 document
-  .getElementById('exitBtn')
-  .addEventListener(
-    'click',
-    exitGoalkeeper
-  );
-
+.getElementById('resetTimerBtn')
+.addEventListener(
+'click',
+resetTimer
+);
 
 document
-  .getElementById('startingBtn')
-  .addEventListener(
-    'click',
-    setStartingGoalkeeper
-  );
+.getElementById('startingBtn')
+.addEventListener(
+'click',
+setStartingGoalkeeper
+);
+
+document
+.getElementById('enterBtn')
+.addEventListener(
+'click',
+enterGoalkeeper
+);
+
+document
+.getElementById('exitBtn')
+.addEventListener(
+'click',
+exitGoalkeeper
+);
 
 
 /* =========================================================
@@ -1790,65 +1907,55 @@ document
 
 function resetStats(){
 
-  const goalkeeper =
-    document.getElementById('goalkeeper').value;
+const goalkeeper =
+document.getElementById('goalkeeper').value;
 
-  const half =
-    document.getElementById('half').value;
+const half =
+document.getElementById('half').value;
 
+if(!confirm(
+'Tem a certeza que pretende limpar as estatísticas de ' +
+goalkeeper +
+' da ' +
+half +
+'.ª parte?'
+)){
 
-  if(
-    !confirm(
-      'Tem a certeza que pretende limpar as estatísticas de ' +
-      goalkeeper +
-      ' da ' +
-      half +
-      '.ª parte?'
-    )
-  ){
+return;
 
-    return;
-
-  }
+}
 
 
-  statIds.forEach(id => {
+statIds.forEach(id => {
 
-    delete stats[
-      'estatistica|' +
-      goalkeeper +
-      '|' +
-      half +
-      '|' +
-      id
-    ];
+delete stats[
+'estatistica|' +
+goalkeeper +
+'|' +
+half +
+'|' +
+id
+];
 
-  });
-
-
-  /*
-     Também limpa o tempo individual
-     dessa GR nessa parte.
-  */
-
-  delete playingTime[
-    playingKey(
-      goalkeeper,
-      half
-    )
-  ];
+});
 
 
-  saveStats();
+delete playingTime[
+playingKey(
+goalkeeper,
+half
+)
+];
 
 
-  localStorage.setItem(
-    'grPlayingTime',
-    JSON.stringify(playingTime)
-  );
+saveStats();
 
+localStorage.setItem(
+'grPlayingTime',
+JSON.stringify(playingTime)
+);
 
-  loadStats();
+loadStats();
 
 }
 
@@ -1859,20 +1966,23 @@ function resetStats(){
 
 function saveData(){
 
-  saveStats();
+saveStats();
 
-  saveMatchInfo();
+localStorage.setItem(
+'grPlayingTime',
+JSON.stringify(playingTime)
+);
 
+localStorage.setItem(
+'grMatchInfo',
+JSON.stringify({
+game:gameInput.value
+})
+);
 
-  localStorage.setItem(
-    'grPlayingTime',
-    JSON.stringify(playingTime)
-  );
-
-
-  alert(
-    'Dados guardados com sucesso.'
-  );
+alert(
+'Dados guardados com sucesso.'
+);
 
 }
 
@@ -1888,30 +1998,28 @@ updateTimer();
 updatePlayingTime();
 
 
-/*
-   Service Worker para a PWA
-*/
+/* =========================================================
+   SERVICE WORKER
+========================================================= */
 
-if(
-  'serviceWorker' in navigator
-){
+if('serviceWorker' in navigator){
 
-  window.addEventListener(
-    'load',
-    () => {
+window.addEventListener(
+'load',
+() => {
 
-      navigator.serviceWorker
-        .register('./sw.js')
-        .catch(
-          error =>
-          console.log(
-            'Service Worker:',
-            error
-          )
-        );
+navigator.serviceWorker
+.register('./sw.js')
+.catch(
+error =>
+console.log(
+'Service Worker:',
+error
+)
+);
 
-    }
-  );
+}
+);
 
 }
 
