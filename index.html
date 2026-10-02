@@ -37,6 +37,7 @@ body{
   box-shadow:0 4px 18px rgba(0,0,0,.12);
 }
 
+
 /* CABEÇALHO */
 
 .header{
@@ -72,6 +73,7 @@ h1{
   font-size:15px;
   color:#555;
 }
+
 
 /* INFORMAÇÃO DO JOGO */
 
@@ -111,6 +113,7 @@ h1{
   background:#f5f8fc;
 }
 
+
 /* CONTROLOS */
 
 .controls{
@@ -143,6 +146,7 @@ select{
   font-weight:bold;
 }
 
+
 /* TEMPORIZADOR */
 
 .timer{
@@ -164,6 +168,7 @@ select{
 .timer-buttons button{
   flex:1;
 }
+
 
 /* BOTÕES */
 
@@ -190,13 +195,14 @@ button.success{
   background:#18794e;
 }
 
+
 /* ESTATÍSTICAS */
 
 .stats-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-top:20px;
+  gap:18px;
+  margin-top:25px;
 }
 
 .category{
@@ -210,17 +216,18 @@ button.success{
   background:#17365d;
   color:white;
   text-align:center;
-  padding:10px;
-  font-size:14px;
+  padding:13px 10px;
+  font-size:15px;
   font-weight:900;
 }
 
 .stat-row{
   display:grid;
-  grid-template-columns:1fr 55px;
+  grid-template-columns:1fr 60px;
   align-items:center;
-  gap:8px;
-  padding:8px 10px;
+  gap:10px;
+  padding:14px 12px;
+  min-height:92px;
   border-bottom:1px solid #ddd;
 }
 
@@ -229,26 +236,30 @@ button.success{
 }
 
 .stat-name{
-  font-size:13px;
+  font-size:15px;
+  line-height:1.3;
   font-weight:bold;
 }
 
 .stat-count{
   text-align:center;
-  font-size:18px;
+  font-size:22px;
   font-weight:900;
 }
 
 .stat-buttons{
   grid-column:1/-1;
   display:flex;
-  gap:5px;
+  gap:8px;
+  margin-top:3px;
 }
 
 .stat-buttons button{
   flex:1;
-  padding:7px;
-  font-size:12px;
+  min-height:38px;
+  padding:8px;
+  font-size:16px;
+  font-weight:900;
 }
 
 .stat-buttons .minus{
@@ -259,6 +270,7 @@ button.success{
   background:#18794e;
 }
 
+
 /* RODAPÉ */
 
 .footer{
@@ -268,6 +280,7 @@ button.success{
   gap:10px;
   flex-wrap:wrap;
 }
+
 
 /* IMPRESSÃO */
 
@@ -765,7 +778,7 @@ onclick="changeStat('bola-parada',1)"
 
 + 
 
-</button></div></div></div></div><!-- BOTÕES --><div class="footer"><button onclick="saveData()">
+</button></div></div></div></div><!-- RODAPÉ --><div class="footer"><button onclick="saveData()">
 GUARDAR
 </button><button
 class="secondary"
@@ -778,8 +791,8 @@ LIMPAR ESTATÍSTICAS
 
 <button onclick="window.print()">
 IMPRIMIR / PDF
-</button></div></div>
-</div><script>
+</button></div></div></div><script>
+
 
 const statIds=[
 
@@ -814,7 +827,9 @@ localStorage.getItem('grStatsTablet')||'{}'
 statIds.forEach(id=>{
 
 if(typeof stats[id]!=='number'){
+
 stats[id]=0;
+
 }
 
 });
@@ -840,14 +855,20 @@ element.textContent=stats[id]||0;
 function changeStat(id,value){
 
 if(typeof stats[id]!=='number'){
+
 stats[id]=0;
+
 }
 
 stats[id]+=value;
 
+
 if(stats[id]<0){
+
 stats[id]=0;
+
 }
+
 
 document.getElementById(id).textContent=stats[id];
 
@@ -865,6 +886,8 @@ JSON.stringify(stats)
 
 }
 
+
+/* JOGO */
 
 const matchInfo=JSON.parse(
 localStorage.getItem('grMatchInfo')||'{}'
@@ -910,12 +933,18 @@ function resetStats(){
 if(!confirm(
 'Tem a certeza que pretende limpar todas as estatísticas?'
 )){
+
 return;
+
 }
 
+
 statIds.forEach(id=>{
+
 stats[id]=0;
+
 });
+
 
 saveStats();
 
@@ -937,6 +966,7 @@ const minutes=Math.floor(totalSeconds/60);
 
 const seconds=totalSeconds%60;
 
+
 document.getElementById('timer').textContent=
 
 String(minutes).padStart(2,'0')+
@@ -949,8 +979,11 @@ String(seconds).padStart(2,'0');
 function startTimer(){
 
 if(timerInterval!==null){
+
 return;
+
 }
+
 
 timerInterval=setInterval(()=>{
 
@@ -1029,6 +1062,8 @@ loadStats();
 
 updateTimer();
 
+
+/* PWA */
 
 if('serviceWorker' in navigator){
 
