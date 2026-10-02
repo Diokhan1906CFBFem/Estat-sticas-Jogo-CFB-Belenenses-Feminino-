@@ -11,37 +11,45 @@
   box-sizing:border-box;
 }
 
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
-  margin:0;
-  padding:20px;
   background:#f2f4f7;
   color:#111;
-  min-width:900px;
+  padding:10px;
 }
 
 .container{
-  max-width:1400px;
-  margin:auto;
+  width:100%;
+  max-width:none;
+  margin:0 auto;
   background:#fff;
-  padding:20px;
-  border-radius:12px;
+  padding:14px;
+  border-radius:10px;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-/* CABEÇALHO */
+/* =========================
+   CABEÇALHO
+========================= */
 
 .header{
   display:grid;
-  grid-template-columns:120px 1fr 120px;
+  grid-template-columns:100px 1fr 100px;
   align-items:center;
-  gap:15px;
-  margin-bottom:10px;
+  gap:12px;
+  margin-bottom:12px;
 }
 
 .logo{
-  width:100px;
-  height:110px;
+  width:80px;
+  height:90px;
   object-fit:contain;
   justify-self:center;
 }
@@ -52,22 +60,25 @@ body{
 
 h1{
   margin:0;
-  font-size:26px;
+  font-size:25px;
+  line-height:1.2;
 }
 
 .sub{
   margin-top:6px;
-  font-size:14px;
+  font-size:13px;
   font-weight:bold;
 }
 
-/* INFORMAÇÃO DO JOGO */
+/* =========================
+   COMPETIÇÃO / JOGO
+========================= */
 
 .match-info{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin-top:15px;
+  gap:14px;
+  margin-top:10px;
 }
 
 .field{
@@ -84,90 +95,95 @@ h1{
 .field input,
 .field select{
   width:100%;
-  padding:10px;
-  border:1px solid #bbb;
+  min-height:44px;
+  padding:9px 11px;
+  border:1px solid #aaa;
   border-radius:6px;
-  font-size:15px;
+  font-size:16px;
 }
 
-/* CONTROLOS */
+/* =========================
+   GUARDA-REDES / PARTE / TEMPO
+========================= */
 
 .controls{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:15px;
-  margin-top:15px;
+  grid-template-columns:1fr 1fr 1.2fr;
+  align-items:end;
+  gap:14px;
+  margin-top:14px;
 }
-
-.controls select{
-  width:100%;
-  padding:10px;
-  border:1px solid #bbb;
-  border-radius:6px;
-  font-size:15px;
-}
-
-/* CRONÓMETRO */
 
 .timer-box{
-  margin-top:20px;
   text-align:center;
 }
 
 .timer{
   font-size:42px;
   font-weight:bold;
+  line-height:1;
   letter-spacing:2px;
-  margin-bottom:10px;
+  margin-bottom:9px;
 }
 
 .timer-buttons{
   display:flex;
   justify-content:center;
-  gap:8px;
+  gap:7px;
 }
 
 .timer-buttons button{
-  padding:8px 16px;
+  min-height:38px;
+  padding:7px 14px;
   font-size:14px;
+  font-weight:bold;
   cursor:pointer;
   border:1px solid #999;
   border-radius:6px;
   background:#fff;
 }
 
-/* ESTATÍSTICAS */
+/* =========================
+   INDICADORES
+========================= */
 
 .stats-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:25px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:20px;
+  width:100%;
 }
 
 .category{
-  border:1px solid #bbb;
+  min-width:0;
+  width:100%;
+  border:1px solid #aaa;
   border-radius:8px;
   overflow:hidden;
   background:#fff;
 }
 
 .category-title{
-  padding:13px 10px;
+  padding:12px 8px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
   font-size:15px;
   font-weight:bold;
-  text-align:center;
   background:#e9ecef;
-  border-bottom:1px solid #bbb;
+  border-bottom:1px solid #aaa;
 }
 
 .stat-row{
   display:grid;
-  grid-template-columns:1fr 60px;
+  grid-template-columns:minmax(0,1fr) 48px;
   align-items:center;
-  gap:10px;
-  padding:14px 12px;
-  min-height:92px;
+  gap:7px;
+  padding:10px 9px;
+  min-height:94px;
   border-bottom:1px solid #ddd;
 }
 
@@ -176,31 +192,34 @@ h1{
 }
 
 .stat-name{
-  font-size:15px;
-  line-height:1.3;
+  min-width:0;
+  font-size:14px;
+  line-height:1.25;
   font-weight:600;
+  overflow-wrap:anywhere;
 }
 
 .stat-count{
+  min-width:48px;
   text-align:center;
-  font-size:22px;
+  font-size:21px;
   font-weight:bold;
-  background:#f4f4f4;
+  background:#f1f1f1;
   border-radius:6px;
-  padding:8px 4px;
+  padding:8px 3px;
 }
 
 .stat-buttons{
   grid-column:1/-1;
   display:flex;
-  gap:8px;
-  margin-top:3px;
+  gap:7px;
+  margin-top:2px;
 }
 
 .stat-buttons button{
   flex:1;
   min-height:38px;
-  font-size:16px;
+  font-size:17px;
   font-weight:bold;
   cursor:pointer;
   border:1px solid #999;
@@ -208,18 +227,21 @@ h1{
   background:#fff;
 }
 
-/* BOTÕES FINAIS */
+/* =========================
+   BOTÕES FINAIS
+========================= */
 
 .footer-buttons{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin-top:25px;
+  gap:10px;
+  margin-top:18px;
   flex-wrap:wrap;
 }
 
 .footer-buttons button{
-  padding:12px 20px;
+  min-height:44px;
+  padding:10px 20px;
   font-size:15px;
   font-weight:bold;
   cursor:pointer;
@@ -228,26 +250,30 @@ h1{
   background:#fff;
 }
 
-/* IMPRESSÃO - A4 VERTICAL */
+/* =========================
+   A4 HORIZONTAL
+========================= */
 
 @page{
-  size:A4 portrait;
+  size:A4 landscape;
   margin:10mm;
 }
+
+/* =========================
+   IMPRESSÃO
+========================= */
 
 @media print{
 
   body{
     background:#fff;
     padding:0;
-    min-width:0;
   }
 
   .container{
     box-shadow:none;
     border-radius:0;
     padding:0;
-    max-width:none;
   }
 
   .timer-buttons,
@@ -256,18 +282,47 @@ h1{
   }
 
   .stats-grid{
-    gap:8px;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
   }
 
   .stat-row{
     min-height:auto;
-    padding:8px;
+    padding:7px;
   }
 
   .stat-buttons{
     display:none;
   }
+
+  .stat-name{
+    font-size:12px;
+  }
+
+  .stat-count{
+    font-size:16px;
+  }
 }
+
+/* =========================
+   TABLET EM VERTICAL
+========================= */
+
+@media (orientation:portrait){
+
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .controls{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .timer-box{
+    grid-column:1/-1;
+  }
+}
+
 </style>
 </head>
 
@@ -275,7 +330,10 @@ h1{
 
 <div class="container">
 
-  <!-- CABEÇALHO -->
+  <!-- =========================
+       CABEÇALHO
+  ========================== -->
+
   <div class="header">
 
     <img
@@ -285,61 +343,104 @@ h1{
     >
 
     <div class="header-title">
-      <h1>ESTATÍSTICAS EM DIRETO — GUARDA-REDES</h1>
+
+      <h1>
+        ESTATÍSTICAS EM DIRETO — GUARDA-REDES
+      </h1>
+
       <div class="sub">
         CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
       </div>
+
     </div>
 
     <div></div>
 
   </div>
 
-  <!-- INFORMAÇÃO DO JOGO -->
+
+  <!-- =========================
+       COMPETIÇÃO / JOGO
+  ========================== -->
+
   <div class="match-info">
 
     <div class="field">
-      <label for="competition">COMPETIÇÃO</label>
+
+      <label for="competition">
+        COMPETIÇÃO
+      </label>
+
       <input
         id="competition"
         type="text"
         value="CD I DIVISÃO SENIORES FEMININA FUTSAL"
       >
+
     </div>
 
+
     <div class="field">
-      <label for="match">JOGO</label>
+
+      <label for="match">
+        JOGO
+      </label>
+
       <input
         id="match"
         type="text"
         placeholder="Ex.: Belenenses vs ..."
       >
+
     </div>
 
   </div>
 
-  <!-- CONTROLOS -->
+
+  <!-- =========================
+       GUARDA-REDES / PARTE / TEMPO
+  ========================== -->
+
   <div class="controls">
 
     <div class="field">
-      <label for="goalkeeper">GUARDA-REDES</label>
+
+      <label for="goalkeeper">
+        GUARDA-REDES
+      </label>
 
       <select id="goalkeeper">
+
         <option>Eli</option>
         <option>Sara Augusto</option>
         <option>Joana Neves</option>
         <option>Penelope</option>
+
       </select>
+
     </div>
+
 
     <div class="field">
-      <label for="half">PARTE</label>
+
+      <label for="half">
+        PARTE
+      </label>
 
       <select id="half">
-        <option value="1">1.ª Parte</option>
-        <option value="2">2.ª Parte</option>
+
+        <option value="1">
+          1.ª Parte
+        </option>
+
+        <option value="2">
+          2.ª Parte
+        </option>
+
       </select>
+
     </div>
+
 
     <div class="timer-box">
 
@@ -348,218 +449,498 @@ h1{
       </div>
 
       <div class="timer-buttons">
-        <button id="startBtn">Iniciar</button>
-        <button id="pauseBtn">Pausa</button>
-        <button id="resetBtn">Repor</button>
+
+        <button id="startBtn">
+          Iniciar
+        </button>
+
+        <button id="pauseBtn">
+          Pausa
+        </button>
+
+        <button id="resetBtn">
+          Repor
+        </button>
+
       </div>
 
     </div>
 
   </div>
 
-  <!-- ESTATÍSTICAS -->
+
+  <!-- =========================
+       INDICADORES
+  ========================== -->
 
   <div class="stats-grid">
 
+
     <!-- DEFESA -->
+
     <div class="category">
 
       <div class="category-title">
         DEFESA
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Defesa de remate</div>
-        <div class="stat-count" id="count-defense-shot">0</div>
+
+        <div class="stat-name">
+          Defesa de remate
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-defense-shot"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('defense-shot',1)">+</button>
-          <button onclick="changeStat('defense-shot',-1)">−</button>
+
+          <button onclick="changeStat('defense-shot',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('defense-shot',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Defesa 1x1</div>
-        <div class="stat-count" id="count-defense-1x1">0</div>
+
+        <div class="stat-name">
+          Defesa 1x1
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-defense-1x1"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('defense-1x1',1)">+</button>
-          <button onclick="changeStat('defense-1x1',-1)">−</button>
+
+          <button onclick="changeStat('defense-1x1',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('defense-1x1',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Defesa com os pés</div>
-        <div class="stat-count" id="count-defense-feet">0</div>
+
+        <div class="stat-name">
+          Defesa com os pés
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-defense-feet"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('defense-feet',1)">+</button>
-          <button onclick="changeStat('defense-feet',-1)">−</button>
+
+          <button onclick="changeStat('defense-feet',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('defense-feet',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Defesa aérea</div>
-        <div class="stat-count" id="count-defense-air">0</div>
+
+        <div class="stat-name">
+          Defesa aérea
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-defense-air"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('defense-air',1)">+</button>
-          <button onclick="changeStat('defense-air',-1)">−</button>
+
+          <button onclick="changeStat('defense-air',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('defense-air',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
     </div>
 
+
     <!-- JOGO OFENSIVO -->
+
     <div class="category">
 
       <div class="category-title">
         JOGO OFENSIVO
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Passe curto</div>
-        <div class="stat-count" id="count-short-pass">0</div>
+
+        <div class="stat-name">
+          Passe curto
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-short-pass"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('short-pass',1)">+</button>
-          <button onclick="changeStat('short-pass',-1)">−</button>
+
+          <button onclick="changeStat('short-pass',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('short-pass',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Passe longo</div>
-        <div class="stat-count" id="count-long-pass">0</div>
+
+        <div class="stat-name">
+          Passe longo
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-long-pass"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('long-pass',1)">+</button>
-          <button onclick="changeStat('long-pass',-1)">−</button>
+
+          <button onclick="changeStat('long-pass',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('long-pass',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Lançamento</div>
-        <div class="stat-count" id="count-launch">0</div>
+
+        <div class="stat-name">
+          Lançamento
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-launch"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('launch',1)">+</button>
-          <button onclick="changeStat('launch',-1)">−</button>
+
+          <button onclick="changeStat('launch',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('launch',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Jogo com os pés</div>
-        <div class="stat-count" id="count-feet-game">0</div>
+
+        <div class="stat-name">
+          Jogo com os pés
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-feet-game"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('feet-game',1)">+</button>
-          <button onclick="changeStat('feet-game',-1)">−</button>
+
+          <button onclick="changeStat('feet-game',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('feet-game',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
     </div>
 
+
     <!-- ORGANIZAÇÃO -->
+
     <div class="category">
 
       <div class="category-title">
         ORGANIZAÇÃO
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Comunicação</div>
-        <div class="stat-count" id="count-communication">0</div>
+
+        <div class="stat-name">
+          Comunicação
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-communication"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('communication',1)">+</button>
-          <button onclick="changeStat('communication',-1)">−</button>
+
+          <button onclick="changeStat('communication',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('communication',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Posicionamento</div>
-        <div class="stat-count" id="count-position">0</div>
+
+        <div class="stat-name">
+          Posicionamento
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-position"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('position',1)">+</button>
-          <button onclick="changeStat('position',-1)">−</button>
+
+          <button onclick="changeStat('position',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('position',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Cobertura</div>
-        <div class="stat-count" id="count-cover">0</div>
+
+        <div class="stat-name">
+          Cobertura
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-cover"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('cover',1)">+</button>
-          <button onclick="changeStat('cover',-1)">−</button>
+
+          <button onclick="changeStat('cover',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('cover',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Orientação defensiva</div>
-        <div class="stat-count" id="count-defense-orientation">0</div>
+
+        <div class="stat-name">
+          Orientação defensiva
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-defense-orientation"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('defense-orientation',1)">+</button>
-          <button onclick="changeStat('defense-orientation',-1)">−</button>
+
+          <button onclick="changeStat('defense-orientation',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('defense-orientation',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
     </div>
 
+
     <!-- AÇÕES ADVERSÁRIAS -->
+
     <div class="category">
 
       <div class="category-title">
         AÇÕES ADVERSÁRIAS
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Remate defendido</div>
-        <div class="stat-count" id="count-saved-shot">0</div>
+
+        <div class="stat-name">
+          Remate defendido
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-saved-shot"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('saved-shot',1)">+</button>
-          <button onclick="changeStat('saved-shot',-1)">−</button>
+
+          <button onclick="changeStat('saved-shot',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('saved-shot',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Golo sofrido</div>
-        <div class="stat-count" id="count-goal-conceded">0</div>
+
+        <div class="stat-name">
+          Golo sofrido
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-goal-conceded"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('goal-conceded',1)">+</button>
-          <button onclick="changeStat('goal-conceded',-1)">−</button>
+
+          <button onclick="changeStat('goal-conceded',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('goal-conceded',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">1x1 adversário</div>
-        <div class="stat-count" id="count-opponent-1x1">0</div>
+
+        <div class="stat-name">
+          1x1 adversário
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-opponent-1x1"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('opponent-1x1',1)">+</button>
-          <button onclick="changeStat('opponent-1x1',-1)">−</button>
+
+          <button onclick="changeStat('opponent-1x1',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('opponent-1x1',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="stat-row">
-        <div class="stat-name">Bola parada</div>
-        <div class="stat-count" id="count-set-piece">0</div>
+
+        <div class="stat-name">
+          Bola parada
+        </div>
+
+        <div
+          class="stat-count"
+          id="count-set-piece"
+        >0</div>
 
         <div class="stat-buttons">
-          <button onclick="changeStat('set-piece',1)">+</button>
-          <button onclick="changeStat('set-piece',-1)">−</button>
+
+          <button onclick="changeStat('set-piece',1)">
+            +
+          </button>
+
+          <button onclick="changeStat('set-piece',-1)">
+            −
+          </button>
+
         </div>
+
       </div>
 
     </div>
 
   </div>
 
-  <!-- BOTÕES -->
+
+  <!-- =========================
+       BOTÕES FINAIS
+  ========================== -->
 
   <div class="footer-buttons">
 
@@ -579,9 +960,15 @@ h1{
 
 </div>
 
+
 <script>
 
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
 const statIds = [
+
   'defense-shot',
   'defense-1x1',
   'defense-feet',
@@ -601,13 +988,16 @@ const statIds = [
   'goal-conceded',
   'opponent-1x1',
   'set-piece'
+
 ];
 
-let stats = {};
+
+let stats={};
 
 statIds.forEach(id=>{
   stats[id]=0;
 });
+
 
 function updateDisplay(){
 
@@ -617,18 +1007,19 @@ function updateDisplay(){
       document.getElementById('count-'+id);
 
     if(element){
-      element.textContent = stats[id];
+      element.textContent=stats[id];
     }
 
   });
 
 }
 
+
 function changeStat(id,value){
 
-  stats[id] += value;
+  stats[id]+=value;
 
-  if(stats[id] < 0){
+  if(stats[id]<0){
     stats[id]=0;
   }
 
@@ -638,11 +1029,17 @@ function changeStat(id,value){
     'grStatsTablet',
     JSON.stringify(stats)
   );
+
 }
+
+
+/* =========================
+   GUARDAR
+========================= */
 
 function saveStats(){
 
-  const data = {
+  const data={
 
     competition:
       document.getElementById('competition').value,
@@ -660,18 +1057,27 @@ function saveStats(){
 
   };
 
+
   localStorage.setItem(
     'grMatchInfo',
     JSON.stringify(data)
   );
+
 
   localStorage.setItem(
     'grStatsTablet',
     JSON.stringify(stats)
   );
 
+
   alert('Estatísticas guardadas.');
+
 }
+
+
+/* =========================
+   LIMPAR
+========================= */
 
 function clearStats(){
 
@@ -681,20 +1087,31 @@ function clearStats(){
     return;
   }
 
+
   statIds.forEach(id=>{
     stats[id]=0;
   });
 
+
   updateDisplay();
 
-  localStorage.removeItem('grStatsTablet');
+
+  localStorage.removeItem(
+    'grStatsTablet'
+  );
 
 }
+
+
+/* =========================
+   CARREGAR DADOS
+========================= */
 
 function loadData(){
 
   const savedStats =
     localStorage.getItem('grStatsTablet');
+
 
   if(savedStats){
 
@@ -703,9 +1120,10 @@ function loadData(){
       const parsed =
         JSON.parse(savedStats);
 
+
       statIds.forEach(id=>{
 
-        if(typeof parsed[id] === 'number'){
+        if(typeof parsed[id]==='number'){
           stats[id]=parsed[id];
         }
 
@@ -715,8 +1133,10 @@ function loadData(){
 
   }
 
+
   const savedMatch =
     localStorage.getItem('grMatchInfo');
+
 
   if(savedMatch){
 
@@ -725,64 +1145,91 @@ function loadData(){
       const data =
         JSON.parse(savedMatch);
 
-      if(data.competition !== undefined){
-        document.getElementById('competition').value =
-          data.competition;
+
+      if(data.competition!==undefined){
+
+        document.getElementById(
+          'competition'
+        ).value=data.competition;
+
       }
 
-      if(data.match !== undefined){
-        document.getElementById('match').value =
-          data.match;
+
+      if(data.match!==undefined){
+
+        document.getElementById(
+          'match'
+        ).value=data.match;
+
       }
 
-      if(data.goalkeeper !== undefined){
-        document.getElementById('goalkeeper').value =
-          data.goalkeeper;
+
+      if(data.goalkeeper!==undefined){
+
+        document.getElementById(
+          'goalkeeper'
+        ).value=data.goalkeeper;
+
       }
 
-      if(data.half !== undefined){
-        document.getElementById('half').value =
-          data.half;
+
+      if(data.half!==undefined){
+
+        document.getElementById(
+          'half'
+        ).value=data.half;
+
       }
 
     }catch(e){}
 
   }
 
+
   updateDisplay();
 
 }
 
-/* CRONÓMETRO */
 
-let totalSeconds = 20 * 60;
+/* =========================
+   CRONÓMETRO
+========================= */
 
-let timerInterval = null;
+let totalSeconds=20*60;
+
+let timerInterval=null;
+
 
 function updateTimer(){
 
-  const minutes =
-    Math.floor(totalSeconds / 60);
+  const minutes=
+    Math.floor(totalSeconds/60);
 
-  const seconds =
-    totalSeconds % 60;
 
-  document.getElementById('timer').textContent =
-    String(minutes).padStart(2,'0') +
-    ':' +
+  const seconds=
+    totalSeconds%60;
+
+
+  document.getElementById(
+    'timer'
+  ).textContent=
+    String(minutes).padStart(2,'0')+
+    ':'+
     String(seconds).padStart(2,'0');
 
 }
 
+
 function startTimer(){
 
-  if(timerInterval !== null){
+  if(timerInterval!==null){
     return;
   }
 
-  timerInterval = setInterval(()=>{
 
-    if(totalSeconds > 0){
+  timerInterval=setInterval(()=>{
+
+    if(totalSeconds>0){
 
       totalSeconds--;
 
@@ -802,9 +1249,10 @@ function startTimer(){
 
 }
 
+
 function pauseTimer(){
 
-  if(timerInterval !== null){
+  if(timerInterval!==null){
 
     clearInterval(timerInterval);
 
@@ -814,51 +1262,82 @@ function pauseTimer(){
 
 }
 
+
 function resetTimer(){
 
   pauseTimer();
 
-  totalSeconds = 20 * 60;
+  totalSeconds=20*60;
 
   updateTimer();
 
 }
 
+
+/* =========================
+   BOTÕES DO TEMPO
+========================= */
+
 document
   .getElementById('startBtn')
-  .addEventListener('click',startTimer);
+  .addEventListener(
+    'click',
+    startTimer
+  );
+
 
 document
   .getElementById('pauseBtn')
-  .addEventListener('click',pauseTimer);
+  .addEventListener(
+    'click',
+    pauseTimer
+  );
+
 
 document
   .getElementById('resetBtn')
-  .addEventListener('click',resetTimer);
+  .addEventListener(
+    'click',
+    resetTimer
+  );
 
-/* CADA PARTE TEM 20 MINUTOS */
+
+/* =========================
+   MUDANÇA DE PARTE
+   20 MINUTOS POR PARTE
+========================= */
 
 document
   .getElementById('half')
-  .addEventListener('change',()=>{
-    resetTimer();
-  });
+  .addEventListener(
+    'change',
+    ()=>{
+      resetTimer();
+    }
+  );
 
-/* INICIALIZAÇÃO */
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
 
 loadData();
 
 updateTimer();
 
-/* SERVICE WORKER */
+
+/* =========================
+   SERVICE WORKER
+========================= */
 
 if('serviceWorker' in navigator){
 
-  window.addEventListener('load',()=>{
-
-    navigator.serviceWorker.register('./sw.js');
-
-  });
+  window.addEventListener(
+    'load',
+    ()=>{
+      navigator.serviceWorker.register('./sw.js');
+    }
+  );
 
 }
 
