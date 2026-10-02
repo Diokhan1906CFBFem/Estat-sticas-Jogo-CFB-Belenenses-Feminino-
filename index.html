@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Estatísticas em Direto — Guarda-Redes</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
 
 html,body{
   margin:0;
@@ -25,17 +29,34 @@ body{
 .page{
   width:100%;
   min-height:100vh;
-  padding:18px;
+  padding:16px;
 }
 
 .container{
   width:100%;
-  max-width:1500px;
+  max-width:1600px;
   margin:auto;
   background:white;
   border-radius:16px;
   padding:20px;
   box-shadow:0 4px 18px rgba(0,0,0,.12);
+}
+
+/* CABEÇALHO */
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:6px;
+}
+
+.logo{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  display:block;
 }
 
 h1{
@@ -52,6 +73,8 @@ h1{
   font-size:15px;
   color:#555;
 }
+
+/* INFORMAÇÃO DO JOGO */
 
 .match-info{
   display:grid;
@@ -70,64 +93,70 @@ h1{
 
 .field input{
   width:100%;
-  padding:12px;
+  padding:13px;
   border:2px solid #17365d;
   border-radius:10px;
-  font-size:15px;
+  font-size:16px;
+  font-weight:bold;
   outline:none;
 }
 
 .competition-name{
-  min-height:44px;
+  min-height:48px;
   display:flex;
   align-items:center;
-  padding:10px 12px;
+  padding:10px 13px;
   border:2px solid #17365d;
   border-radius:10px;
-  font-weight:800;
+  font-weight:900;
   color:#17365d;
   background:#f5f8fc;
+  font-size:16px;
 }
+
+/* CONTROLOS */
 
 .controls{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1.4fr;
   gap:15px;
-  margin-top:20px;
+  margin-top:18px;
 }
 
 .control-box{
   border:2px solid #17365d;
   border-radius:12px;
-  padding:12px;
+  padding:13px;
   background:#f8fafc;
 }
 
 .control-title{
   font-size:12px;
-  font-weight:bold;
+  font-weight:900;
   margin-bottom:8px;
 }
 
 select{
   width:100%;
-  padding:10px;
+  padding:12px;
   border:2px solid #17365d;
   border-radius:8px;
   background:white;
-  font-size:15px;
+  font-size:16px;
   font-weight:bold;
 }
+
+/* TEMPO */
 
 .timer{
   text-align:center;
 }
 
 .timer-display{
-  font-size:38px;
+  font-size:42px;
   font-weight:900;
   letter-spacing:2px;
-  margin:4px 0 8px;
+  margin:2px 0 7px;
 }
 
 .timer-buttons{
@@ -135,19 +164,20 @@ select{
   gap:8px;
 }
 
-.timer-buttons button{
-  flex:1;
-}
-
 button{
   border:none;
   border-radius:8px;
-  padding:10px 12px;
+  padding:11px 13px;
   cursor:pointer;
   font-size:14px;
   font-weight:bold;
   background:#17365d;
   color:white;
+  touch-action:manipulation;
+}
+
+.timer-buttons button{
+  flex:1;
 }
 
 button.secondary{
@@ -162,72 +192,53 @@ button.success{
   background:#18794e;
 }
 
-button.active{
+button.orange{
   background:#d97706;
 }
 
-.goalkeeper-controls{
+/* CONTROLO DA GR */
+
+.goalkeeper-control{
   margin-top:15px;
   border:2px solid #17365d;
   border-radius:12px;
-  padding:14px;
+  padding:13px;
   background:#f8fafc;
-}
-
-.goalkeeper-title{
-  font-size:13px;
-  font-weight:900;
-  margin-bottom:10px;
-  text-align:center;
 }
 
 .goalkeeper-buttons{
   display:flex;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
 .goalkeeper-buttons button{
   flex:1;
-  min-width:120px;
+  min-width:170px;
+  font-size:16px;
+  padding:14px;
 }
 
-.goalkeeper-time{
+.playing-time{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
   margin-top:12px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-
-.gk-time-box{
-  background:white;
-  border:2px solid #d6dce5;
-  border-radius:10px;
-  padding:9px;
-  text-align:center;
-}
-
-.gk-name{
-  font-weight:900;
-  font-size:13px;
-}
-
-.gk-time{
-  font-size:21px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.gk-status{
-  font-size:11px;
   font-weight:bold;
-  margin-top:3px;
+  font-size:15px;
 }
+
+.playing-time strong{
+  font-size:22px;
+}
+
+/* INDICADORES */
 
 .stats-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
   margin-top:20px;
 }
 
@@ -242,18 +253,19 @@ button.active{
   background:#17365d;
   color:white;
   text-align:center;
-  padding:10px;
-  font-size:14px;
+  padding:12px;
+  font-size:16px;
   font-weight:900;
 }
 
 .stat-row{
   display:grid;
-  grid-template-columns:1fr 55px;
+  grid-template-columns:minmax(0,1fr) 70px 170px;
   align-items:center;
-  gap:8px;
-  padding:8px 10px;
+  gap:12px;
+  padding:12px 14px;
   border-bottom:1px solid #ddd;
+  min-height:66px;
 }
 
 .stat-row:last-child{
@@ -261,26 +273,26 @@ button.active{
 }
 
 .stat-name{
-  font-size:13px;
+  font-size:16px;
   font-weight:bold;
+  line-height:1.2;
 }
 
 .stat-count{
   text-align:center;
-  font-size:18px;
+  font-size:25px;
   font-weight:900;
 }
 
 .stat-buttons{
-  grid-column:1/-1;
   display:flex;
-  gap:5px;
+  gap:7px;
 }
 
 .stat-buttons button{
   flex:1;
-  padding:7px;
-  font-size:12px;
+  padding:10px 8px;
+  font-size:18px;
 }
 
 .stat-buttons .minus{
@@ -291,6 +303,8 @@ button.active{
   background:#18794e;
 }
 
+/* RODAPÉ */
+
 .footer{
   margin-top:20px;
   display:flex;
@@ -299,12 +313,33 @@ button.active{
   flex-wrap:wrap;
 }
 
+.footer button{
+  min-width:180px;
+}
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stat-row{
+    grid-template-columns:minmax(0,1fr) 70px 190px;
+  }
+
+}
+
+/* IMPRESSÃO */
+
 @page{
   size:A4 landscape;
   margin:10mm;
 }
 
 @media print{
+
   body{
     min-width:0;
     background:white;
@@ -320,10 +355,11 @@ button.active{
   }
 
   .timer-buttons,
-  .goalkeeper-controls,
+  .goalkeeper-control,
   .footer{
     display:none;
   }
+
 }
 </style>
 </head>
@@ -333,298 +369,761 @@ button.active{
 <div class="page">
 <div class="container">
 
-<h1>ESTATÍSTICAS EM DIRETO — GUARDA-REDES</h1>
+<!-- CABEÇALHO -->
 
-<div class="sub">
-CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
+<div class="header">
+
+  <!--
+  Se quiseres colocar o logótipo mais tarde,
+  basta substituir o src pelo link direto da imagem.
+  -->
+  <img
+    class="logo"
+    src=""
+    alt=""
+    style="display:none;"
+  >
+
+  <div>
+    <h1>ESTATÍSTICAS EM DIRETO — GUARDA-REDES</h1>
+
+    <div class="sub">
+      CLUBE DE FUTEBOL OS BELENENSES • FUTSAL FEMININO
+    </div>
+  </div>
+
 </div>
+
+
+<!-- INFORMAÇÃO DO JOGO -->
 
 <div class="match-info">
 
-<div class="field">
-<label>COMPETIÇÃO</label>
-<div class="competition-name">
-CD I DIVISÃO SENIORES FEMININA FUTSAL
-</div>
+  <div class="field">
+
+    <label>COMPETIÇÃO</label>
+
+    <div class="competition-name">
+      CD I DIVISÃO SENIORES FEMININA FUTSAL
+    </div>
+
+  </div>
+
+
+  <div class="field">
+
+    <label for="game">JOGO</label>
+
+    <input
+      id="game"
+      type="text"
+      placeholder="Ex.: Belenenses x Benfica"
+    >
+
+  </div>
+
 </div>
 
-<div class="field">
-<label for="game">JOGO</label>
-<input id="game" type="text" placeholder="Ex.: Belenenses x Benfica">
-</div>
 
-</div>
+<!-- GUARDA-REDES / PARTE / TEMPO -->
 
 <div class="controls">
 
-<div class="control-box">
-<div class="control-title">GUARDA-REDES</div>
+  <div class="control-box">
 
-<select id="goalkeeper">
-<option value="Eli">Eli</option>
-<option value="Sara Augusto">Sara Augusto</option>
-<option value="Joana Neves">Joana Neves</option>
-<option value="Penelope">Penelope</option>
-</select>
+    <div class="control-title">
+      GUARDA-REDES
+    </div>
+
+    <select id="goalkeeper">
+
+      <option value="Eli">
+        Eli
+      </option>
+
+      <option value="Sara Augusto">
+        Sara Augusto
+      </option>
+
+      <option value="Joana Neves">
+        Joana Neves
+      </option>
+
+      <option value="Penelope">
+        Penelope
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div class="control-box">
+
+    <div class="control-title">
+      PARTE
+    </div>
+
+    <select id="half">
+
+      <option value="1">
+        1.ª Parte
+      </option>
+
+      <option value="2">
+        2.ª Parte
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div class="control-box timer">
+
+    <div class="control-title">
+      TEMPO DE JOGO
+    </div>
+
+    <div id="timer" class="timer-display">
+      20:00
+    </div>
+
+    <div class="timer-buttons">
+
+      <button
+        id="startBtn"
+        class="success">
+        ▶ INICIAR
+      </button>
+
+      <button
+        id="pauseBtn"
+        class="secondary">
+        ⏸ PAUSAR
+      </button>
+
+      <button
+        id="resetTimerBtn"
+        class="danger">
+        ↺ RESET
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="control-box">
-<div class="control-title">PARTE</div>
-
-<select id="half">
-<option value="1">1.ª Parte</option>
-<option value="2">2.ª Parte</option>
-</select>
-</div>
-
-<div class="control-box timer">
-<div class="control-title">TEMPO</div>
-
-<div id="timer" class="timer-display">20:00</div>
-
-<div class="timer-buttons">
-<button id="startBtn" class="success">INICIAR</button>
-<button id="pauseBtn" class="secondary">PAUSAR</button>
-<button id="resetTimerBtn" class="danger">RESET</button>
-</div>
-</div>
-
-</div>
 
 <!-- CONTROLO DA GUARDA-REDES -->
-<div class="goalkeeper-controls">
 
-<div class="goalkeeper-title">
-CONTROLO DA GUARDA-REDES
-</div>
+<div class="goalkeeper-control">
 
-<div class="goalkeeper-buttons">
+  <div class="control-title">
+    CONTROLO DA GUARDA-REDES
+  </div>
 
-<button id="startingBtn" class="active">
-5 INICIAL
-</button>
+  <div class="goalkeeper-buttons">
 
-<button id="enterBtn" class="success">
-ENTRADA
-</button>
+    <button
+      id="startingBtn"
+      class="success">
+      ⭐ CINCO INICIAL
+    </button>
 
-<button id="exitBtn" class="danger">
-SAÍDA
-</button>
+    <button
+      id="enterBtn"
+      class="success">
+      ▶ ENTRAR EM CAMPO
+    </button>
 
-</div>
+    <button
+      id="exitBtn"
+      class="orange">
+      ⏹ SAIR DE CAMPO
+    </button>
 
-<div class="goalkeeper-time">
+  </div>
 
-<div class="gk-time-box">
-<div class="gk-name">Eli</div>
-<div class="gk-time" id="time-Eli">00:00</div>
-<div class="gk-status" id="status-Eli"></div>
-</div>
 
-<div class="gk-time-box">
-<div class="gk-name">Sara Augusto</div>
-<div class="gk-time" id="time-Sara Augusto">00:00</div>
-<div class="gk-status" id="status-Sara Augusto"></div>
-</div>
+  <div class="playing-time">
 
-<div class="gk-time-box">
-<div class="gk-name">Joana Neves</div>
-<div class="gk-time" id="time-Joana Neves">00:00</div>
-<div class="gk-status" id="status-Joana Neves"></div>
-</div>
+    TEMPO EM CAMPO DA GR SELECIONADA:
 
-<div class="gk-time-box">
-<div class="gk-name">Penelope</div>
-<div class="gk-time" id="time-Penelope">00:00</div>
-<div class="gk-status" id="status-Penelope"></div>
-</div>
+    <strong id="playingTime">
+      00:00
+    </strong>
+
+  </div>
 
 </div>
 
-</div>
 
+<!-- INDICADORES -->
 
 <div class="stats-grid">
 
-<div class="category">
-<div class="category-title">DEFESA</div>
 
-<div class="stat-row">
-<div class="stat-name">Defesa de remate</div>
-<div class="stat-count" id="defesa-remate">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('defesa-remate',-1)">−</button>
-<button class="plus" onclick="changeStat('defesa-remate',1)">+</button>
-</div>
-</div>
-
-<div class="stat-row">
-<div class="stat-name">Defesa 1x1</div>
-<div class="stat-count" id="defesa-1x1">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('defesa-1x1',-1)">−</button>
-<button class="plus" onclick="changeStat('defesa-1x1',1)">+</button>
-</div>
-</div>
-
-<div class="stat-row">
-<div class="stat-name">Defesa com os pés</div>
-<div class="stat-count" id="defesa-pes">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('defesa-pes',-1)">−</button>
-<button class="plus" onclick="changeStat('defesa-pes',1)">+</button>
-</div>
-</div>
-
-<div class="stat-row">
-<div class="stat-name">Defesa aérea</div>
-<div class="stat-count" id="defesa-aerea">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('defesa-aerea',-1)">−</button>
-<button class="plus" onclick="changeStat('defesa-aerea',1)">+</button>
-</div>
-</div>
-</div>
-
+<!-- DEFESA -->
 
 <div class="category">
-<div class="category-title">JOGO OFENSIVO</div>
 
-<div class="stat-row">
-<div class="stat-name">Passe curto</div>
-<div class="stat-count" id="passe-curto">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('passe-curto',-1)">−</button>
-<button class="plus" onclick="changeStat('passe-curto',1)">+</button>
-</div>
+  <div class="category-title">
+    DEFESA
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Defesa de remate
+    </div>
+
+    <div
+      class="stat-count"
+      id="defesa-remate">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('defesa-remate',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('defesa-remate',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Defesa 1x1
+    </div>
+
+    <div
+      class="stat-count"
+      id="defesa-1x1">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('defesa-1x1',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('defesa-1x1',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Defesa com os pés
+    </div>
+
+    <div
+      class="stat-count"
+      id="defesa-pes">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('defesa-pes',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('defesa-pes',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Defesa aérea
+    </div>
+
+    <div
+      class="stat-count"
+      id="defesa-aerea">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('defesa-aerea',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('defesa-aerea',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="stat-row">
-<div class="stat-name">Passe longo</div>
-<div class="stat-count" id="passe-longo">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('passe-longo',-1)">−</button>
-<button class="plus" onclick="changeStat('passe-longo',1)">+</button>
-</div>
-</div>
 
-<div class="stat-row">
-<div class="stat-name">Lançamento</div>
-<div class="stat-count" id="lancamento">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('lancamento',-1)">−</button>
-<button class="plus" onclick="changeStat('lancamento',1)">+</button>
-</div>
-</div>
-
-<div class="stat-row">
-<div class="stat-name">Jogo com os pés</div>
-<div class="stat-count" id="jogo-pes">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('jogo-pes',-1)">−</button>
-<button class="plus" onclick="changeStat('jogo-pes',1)">+</button>
-</div>
-</div>
-</div>
-
+<!-- JOGO OFENSIVO -->
 
 <div class="category">
-<div class="category-title">ORGANIZAÇÃO</div>
 
-<div class="stat-row">
-<div class="stat-name">Comunicação</div>
-<div class="stat-count" id="comunicacao">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('comunicacao',-1)">−</button>
-<button class="plus" onclick="changeStat('comunicacao',1)">+</button>
-</div>
+  <div class="category-title">
+    JOGO OFENSIVO
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Passe curto
+    </div>
+
+    <div
+      class="stat-count"
+      id="passe-curto">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('passe-curto',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('passe-curto',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Passe longo
+    </div>
+
+    <div
+      class="stat-count"
+      id="passe-longo">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('passe-longo',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('passe-longo',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Lançamento
+    </div>
+
+    <div
+      class="stat-count"
+      id="lancamento">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('lancamento',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('lancamento',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Jogo com os pés
+    </div>
+
+    <div
+      class="stat-count"
+      id="jogo-pes">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('jogo-pes',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('jogo-pes',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="stat-row">
-<div class="stat-name">Posicionamento</div>
-<div class="stat-count" id="posicionamento">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('posicionamento',-1)">−</button>
-<button class="plus" onclick="changeStat('posicionamento',1)">+</button>
-</div>
-</div>
 
-<div class="stat-row">
-<div class="stat-name">Cobertura</div>
-<div class="stat-count" id="cobertura">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('cobertura',-1)">−</button>
-<button class="plus" onclick="changeStat('cobertura',1)">+</button>
-</div>
-</div>
-
-<div class="stat-row">
-<div class="stat-name">Orientação defensiva</div>
-<div class="stat-count" id="orientacao">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('orientacao',-1)">−</button>
-<button class="plus" onclick="changeStat('orientacao',1)">+</button>
-</div>
-</div>
-</div>
-
+<!-- ORGANIZAÇÃO -->
 
 <div class="category">
-<div class="category-title">AÇÕES ADVERSÁRIAS</div>
 
-<div class="stat-row">
-<div class="stat-name">Remate defendido</div>
-<div class="stat-count" id="remate-defendido">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('remate-defendido',-1)">−</button>
-<button class="plus" onclick="changeStat('remate-defendido',1)">+</button>
-</div>
+  <div class="category-title">
+    ORGANIZAÇÃO
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Comunicação
+    </div>
+
+    <div
+      class="stat-count"
+      id="comunicacao">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('comunicacao',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('comunicacao',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Posicionamento
+    </div>
+
+    <div
+      class="stat-count"
+      id="posicionamento">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('posicionamento',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('posicionamento',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Cobertura
+    </div>
+
+    <div
+      class="stat-count"
+      id="cobertura">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('cobertura',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('cobertura',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Orientação defensiva
+    </div>
+
+    <div
+      class="stat-count"
+      id="orientacao">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('orientacao',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('orientacao',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="stat-row">
-<div class="stat-name">Golo sofrido</div>
-<div class="stat-count" id="golo-sofrido">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('golo-sofrido',-1)">−</button>
-<button class="plus" onclick="changeStat('golo-sofrido',1)">+</button>
-</div>
+
+<!-- AÇÕES ADVERSÁRIAS -->
+
+<div class="category">
+
+  <div class="category-title">
+    AÇÕES ADVERSÁRIAS
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Remate defendido
+    </div>
+
+    <div
+      class="stat-count"
+      id="remate-defendido">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('remate-defendido',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('remate-defendido',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Golo sofrido
+    </div>
+
+    <div
+      class="stat-count"
+      id="golo-sofrido">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('golo-sofrido',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('golo-sofrido',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      1x1 adversário
+    </div>
+
+    <div
+      class="stat-count"
+      id="adversario-1x1">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('adversario-1x1',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('adversario-1x1',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-row">
+
+    <div class="stat-name">
+      Bola parada
+    </div>
+
+    <div
+      class="stat-count"
+      id="bola-parada">
+      0
+    </div>
+
+    <div class="stat-buttons">
+
+      <button
+        class="minus"
+        onclick="changeStat('bola-parada',-1)">
+        −
+      </button>
+
+      <button
+        class="plus"
+        onclick="changeStat('bola-parada',1)">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="stat-row">
-<div class="stat-name">1x1 adversário</div>
-<div class="stat-count" id="adversario-1x1">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('adversario-1x1',-1)">−</button>
-<button class="plus" onclick="changeStat('adversario-1x1',1)">+</button>
-</div>
 </div>
 
-<div class="stat-row">
-<div class="stat-name">Bola parada</div>
-<div class="stat-count" id="bola-parada">0</div>
-<div class="stat-buttons">
-<button class="minus" onclick="changeStat('bola-parada',-1)">−</button>
-<button class="plus" onclick="changeStat('bola-parada',1)">+</button>
-</div>
-</div>
 
-</div>
-
-</div>
-
+<!-- BOTÕES -->
 
 <div class="footer">
 
-<button onclick="saveData()">GUARDAR</button>
+  <button onclick="saveData()">
+    💾 GUARDAR
+  </button>
 
-<button class="secondary" onclick="resetStats()">
-LIMPAR ESTATÍSTICAS
-</button>
+  <button
+    class="secondary"
+    onclick="resetStats()">
+    LIMPAR ESTATÍSTICAS DA GR
+  </button>
 
-<button onclick="window.print()">
-IMPRIMIR / PDF
-</button>
+  <button onclick="window.print()">
+    🖨 IMPRIMIR / PDF
+  </button>
 
 </div>
 
@@ -634,618 +1133,785 @@ IMPRIMIR / PDF
 
 <script>
 
-/* =========================
-   ESTATÍSTICAS
-========================= */
+/* =========================================================
+   CONFIGURAÇÃO
+========================================================= */
 
-const statIds=[
-'defesa-remate',
-'defesa-1x1',
-'defesa-pes',
-'defesa-aerea',
-'passe-curto',
-'passe-longo',
-'lancamento',
-'jogo-pes',
-'comunicacao',
-'posicionamento',
-'cobertura',
-'orientacao',
-'remate-defendido',
-'golo-sofrido',
-'adversario-1x1',
-'bola-parada'
+const statIds = [
+
+  'defesa-remate',
+  'defesa-1x1',
+  'defesa-pes',
+  'defesa-aerea',
+
+  'passe-curto',
+  'passe-longo',
+  'lancamento',
+  'jogo-pes',
+
+  'comunicacao',
+  'posicionamento',
+  'cobertura',
+  'orientacao',
+
+  'remate-defendido',
+  'golo-sofrido',
+  'adversario-1x1',
+  'bola-parada'
+
 ];
 
-let stats=JSON.parse(
-localStorage.getItem('grStatsTablet')||'{}'
+
+const goalkeepers = [
+
+  'Eli',
+  'Sara Augusto',
+  'Joana Neves',
+  'Penelope'
+
+];
+
+
+/* =========================================================
+   ESTADO PRINCIPAL
+========================================================= */
+
+let stats = JSON.parse(
+  localStorage.getItem('grStatsIndividual') || '{}'
 );
 
-statIds.forEach(id=>{
-if(typeof stats[id]!=='number'){
-stats[id]=0;
+
+/*
+   Estrutura:
+
+   estatistica|GR|parte|indicador
+
+   Exemplo:
+
+   estatistica|Eli|1|defesa-remate
+
+   Assim cada GR tem os seus próprios valores.
+*/
+
+
+function statKey(id){
+
+  return (
+
+    'estatistica|' +
+
+    document.getElementById('goalkeeper').value +
+
+    '|' +
+
+    document.getElementById('half').value +
+
+    '|' +
+
+    id
+
+  );
+
 }
-});
 
-function loadStats(){
 
-statIds.forEach(id=>{
-
-const element=document.getElementById(id);
-
-if(element){
-element.textContent=stats[id]||0;
-}
-
-});
-
-}
+/* =========================================================
+   ALTERAR ESTATÍSTICAS
+========================================================= */
 
 function changeStat(id,value){
 
-if(typeof stats[id]!=='number'){
-stats[id]=0;
+  const key = statKey(id);
+
+  if(typeof stats[key] !== 'number'){
+    stats[key] = 0;
+  }
+
+  stats[key] += value;
+
+  if(stats[key] < 0){
+    stats[key] = 0;
+  }
+
+  saveStats();
+
+  loadStats();
+
 }
 
-stats[id]+=value;
 
-if(stats[id]<0){
-stats[id]=0;
+/* =========================================================
+   CARREGAR ESTATÍSTICAS DA GR SELECIONADA
+========================================================= */
+
+function loadStats(){
+
+  statIds.forEach(id => {
+
+    const element =
+      document.getElementById(id);
+
+    if(!element){
+      return;
+    }
+
+    const key = statKey(id);
+
+    element.textContent =
+      stats[key] || 0;
+
+  });
+
+
+  updatePlayingTime();
+
 }
 
-document.getElementById(id).textContent=stats[id];
 
-saveStats();
-
-}
+/* =========================================================
+   GUARDAR ESTATÍSTICAS
+========================================================= */
 
 function saveStats(){
 
-localStorage.setItem(
-'grStatsTablet',
-JSON.stringify(stats)
-);
+  localStorage.setItem(
+    'grStatsIndividual',
+    JSON.stringify(stats)
+  );
 
 }
 
 
-/* =========================
-   JOGO
-========================= */
+/* =========================================================
+   INFORMAÇÃO DO JOGO
+========================================================= */
 
-const matchInfo=JSON.parse(
-localStorage.getItem('grMatchInfo')||'{}'
+const gameInput =
+  document.getElementById('game');
+
+
+let matchInfo =
+  JSON.parse(
+    localStorage.getItem('grMatchInfo') || '{}'
+  );
+
+
+gameInput.value =
+  matchInfo.game || '';
+
+
+gameInput.addEventListener(
+  'input',
+  saveMatchInfo
 );
 
-const gameInput=document.getElementById('game');
 
-gameInput.value=matchInfo.game||'';
+function saveMatchInfo(){
 
-gameInput.addEventListener('input',()=>{
+  matchInfo.game =
+    gameInput.value;
 
-localStorage.setItem(
-'grMatchInfo',
-JSON.stringify({
-game:gameInput.value
-})
-);
-
-});
-
-
-function saveData(){
-
-saveStats();
-
-localStorage.setItem(
-'grMatchInfo',
-JSON.stringify({
-game:gameInput.value
-})
-);
-
-saveGoalkeeperData();
-
-alert('Dados guardados com sucesso.');
+  localStorage.setItem(
+    'grMatchInfo',
+    JSON.stringify(matchInfo)
+  );
 
 }
 
 
-function resetStats(){
-
-if(!confirm(
-'Tem a certeza que pretende limpar todas as estatísticas?'
-)){
-return;
-}
-
-statIds.forEach(id=>{
-stats[id]=0;
-});
-
-saveStats();
-
-loadStats();
-
-}
-
-
-/* =========================
+/* =========================================================
    TEMPO DE JOGO
    20 MINUTOS POR PARTE
-========================= */
+========================================================= */
 
-let totalSeconds=20*60;
-let timerInterval=null;
+const HALF_TIME = 20 * 60;
+
+let totalSeconds = HALF_TIME;
+
+let timerInterval = null;
+
+let timerRunning = false;
 
 
-/* =========================
-   GUARDA-REDES
-========================= */
-
-const goalkeeperIds=[
-'Eli',
-'Sara Augusto',
-'Joana Neves',
-'Penelope'
-];
-
-let goalkeeperData=
-JSON.parse(
-localStorage.getItem('goalkeeperData')||'{}'
-);
+/* =========================================================
+   TEMPO EM CAMPO DAS GUARDA-REDES
+========================================================= */
 
 
 /*
-Cada guarda-redes tem:
+   playing|GR|parte
 
-part1
-part2
-starting
-active
+   Exemplo:
+
+   playing|Eli|1
+
+   Guarda quantos segundos a Eli esteve
+   efetivamente em campo na 1.ª parte.
 */
 
-goalkeeperIds.forEach(name=>{
 
-if(!goalkeeperData[name]){
-
-goalkeeperData[name]={
-part1:0,
-part2:0,
-starting:false,
-active:false
-};
-
-}
-
-if(typeof goalkeeperData[name].part1!=='number'){
-goalkeeperData[name].part1=0;
-}
-
-if(typeof goalkeeperData[name].part2!=='number'){
-goalkeeperData[name].part2=0;
-}
-
-if(typeof goalkeeperData[name].starting!=='boolean'){
-goalkeeperData[name].starting=false;
-}
-
-if(typeof goalkeeperData[name].active!=='boolean'){
-goalkeeperData[name].active=false;
-}
-
-});
+let playingTime =
+  JSON.parse(
+    localStorage.getItem('grPlayingTime') || '{}'
+  );
 
 
-function saveGoalkeeperData(){
+/*
+   Guarda quem está atualmente em campo.
 
-localStorage.setItem(
-'goalkeeperData',
-JSON.stringify(goalkeeperData)
-);
+   Não existe "nenhuma".
+
+   Sempre que uma GR entra,
+   essa passa a ser a GR em campo.
+*/
+
+let currentGoalkeeper = null;
+
+
+/* =========================================================
+   CHAVE DO TEMPO INDIVIDUAL
+========================================================= */
+
+function playingKey(goalkeeper,half){
+
+  return (
+    'playing|' +
+    goalkeeper +
+    '|' +
+    half
+  );
 
 }
 
+
+/* =========================================================
+   TEMPO DA GR SELECIONADA
+========================================================= */
+
+function getPlayingTime(){
+
+  const goalkeeper =
+    document.getElementById('goalkeeper').value;
+
+  const half =
+    document.getElementById('half').value;
+
+  const key =
+    playingKey(goalkeeper,half);
+
+  return playingTime[key] || 0;
+
+}
+
+
+/* =========================================================
+   MOSTRAR TEMPO
+========================================================= */
 
 function formatTime(seconds){
 
-seconds=Math.max(0,Math.floor(seconds));
+  seconds =
+    Math.max(
+      0,
+      Math.floor(seconds)
+    );
 
-const minutes=Math.floor(seconds/60);
+  const minutes =
+    Math.floor(seconds / 60);
 
-const secs=seconds%60;
+  const secs =
+    seconds % 60;
 
-return String(minutes).padStart(2,'0')+
-':'+
-String(secs).padStart(2,'0');
+  return (
 
-}
+    String(minutes).padStart(2,'0') +
 
+    ':' +
 
-function selectedGoalkeeper(){
+    String(secs).padStart(2,'0')
 
-return document.getElementById('goalkeeper').value;
-
-}
-
-
-function currentHalf(){
-
-return document.getElementById('half').value;
-}
-
-
-/* =========================
-   5 INICIAL
-========================= */
-
-function toggleStarting(){
-
-const name=selectedGoalkeeper();
-
-goalkeeperData[name].starting=
-!goalkeeperData[name].starting;
-
-saveGoalkeeperData();
-
-updateGoalkeeperDisplay();
+  );
 
 }
 
-
-/* =========================
-   ENTRADA
-========================= */
-
-function enterGoalkeeper(){
-
-const name=selectedGoalkeeper();
-
-const active=
-goalkeeperIds.find(
-g=>goalkeeperData[g].active
-);
-
-if(active && active!==name){
-
-alert(
-active+
-' ainda está em campo. Registe primeiro a SAÍDA.'
-);
-
-return;
-
-}
-
-goalkeeperData[name].active=true;
-
-saveGoalkeeperData();
-
-updateGoalkeeperDisplay();
-
-}
-
-
-/* =========================
-   SAÍDA
-========================= */
-
-function exitGoalkeeper(){
-
-const name=selectedGoalkeeper();
-
-goalkeeperData[name].active=false;
-
-saveGoalkeeperData();
-
-updateGoalkeeperDisplay();
-
-}
-
-
-/* =========================
-   TEMPO DA GR
-========================= */
-
-function addGoalkeeperSecond(){
-
-const active=
-goalkeeperIds.find(
-g=>goalkeeperData[g].active
-);
-
-if(!active){
-return;
-}
-
-const half=currentHalf();
-
-if(half==='1'){
-
-goalkeeperData[active].part1++;
-
-}else{
-
-goalkeeperData[active].part2++;
-
-}
-
-saveGoalkeeperData();
-
-updateGoalkeeperDisplay();
-
-}
-
-
-/* =========================
-   VISUALIZAÇÃO
-========================= */
-
-function updateGoalkeeperDisplay(){
-
-goalkeeperIds.forEach(name=>{
-
-const timeElement=
-document.getElementById(
-'time-'+name
-);
-
-const statusElement=
-document.getElementById(
-'status-'+name
-);
-
-const total=
-goalkeeperData[name].part1+
-goalkeeperData[name].part2;
-
-timeElement.textContent=
-formatTime(total);
-
-let status=[];
-
-if(goalkeeperData[name].starting){
-status.push('5 INICIAL');
-}
-
-if(goalkeeperData[name].active){
-status.push('EM CAMPO');
-}
-
-statusElement.textContent=
-status.join(' • ');
-
-});
-
-const name=selectedGoalkeeper();
-
-const startingBtn=
-document.getElementById('startingBtn');
-
-if(goalkeeperData[name].starting){
-
-startingBtn.textContent=
-'✓ 5 INICIAL';
-
-}else{
-
-startingBtn.textContent=
-'5 INICIAL';
-
-}
-
-}
-
-
-/* =========================
-   CRONÓMETRO
-========================= */
 
 function updateTimer(){
 
-const minutes=
-Math.floor(totalSeconds/60);
-
-const seconds=
-totalSeconds%60;
-
-document.getElementById('timer').textContent=
-String(minutes).padStart(2,'0')+
-':'+
-String(seconds).padStart(2,'0');
+  document.getElementById('timer')
+    .textContent =
+    formatTime(totalSeconds);
 
 }
 
+
+function updatePlayingTime(){
+
+  document.getElementById('playingTime')
+    .textContent =
+    formatTime(getPlayingTime());
+
+}
+
+
+/* =========================================================
+   ATUALIZAÇÃO DO TEMPO
+========================================================= */
+
+function tick(){
+
+  if(totalSeconds <= 0){
+
+    pauseTimer();
+
+    return;
+
+  }
+
+
+  totalSeconds--;
+
+
+  /*
+     O relógio da GR só conta
+     se existir uma GR em campo.
+  */
+
+  if(currentGoalkeeper){
+
+    const half =
+      document.getElementById('half').value;
+
+    const key =
+      playingKey(
+        currentGoalkeeper,
+        half
+      );
+
+
+    if(typeof playingTime[key] !== 'number'){
+      playingTime[key] = 0;
+    }
+
+
+    playingTime[key]++;
+
+
+    localStorage.setItem(
+      'grPlayingTime',
+      JSON.stringify(playingTime)
+    );
+
+  }
+
+
+  updateTimer();
+
+  updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   INICIAR JOGO
+========================================================= */
 
 function startTimer(){
 
-if(timerInterval!==null){
-return;
-}
+  if(timerRunning){
+    return;
+  }
+
+  if(totalSeconds <= 0){
+    return;
+  }
 
 
-/*
-Se existir uma GR marcada como
-5 inicial e nenhuma estiver em campo,
-entra automaticamente quando o jogo começa.
-*/
+  timerRunning = true;
 
-const active=
-goalkeeperIds.find(
-g=>goalkeeperData[g].active
-);
 
-if(!active){
-
-const starting=
-goalkeeperIds.find(
-g=>goalkeeperData[g].starting
-);
-
-if(starting){
-
-goalkeeperData[starting].active=true;
-
-saveGoalkeeperData();
-
-}
+  timerInterval =
+    setInterval(
+      tick,
+      1000
+    );
 
 }
 
 
-timerInterval=setInterval(()=>{
-
-if(totalSeconds>0){
-
-totalSeconds--;
-
-addGoalkeeperSecond();
-
-updateTimer();
-
-}else{
-
-clearInterval(timerInterval);
-
-timerInterval=null;
-
-const active=
-goalkeeperIds.find(
-g=>goalkeeperData[g].active
-);
-
-if(active){
-
-goalkeeperData[active].active=false;
-
-saveGoalkeeperData();
-
-updateGoalkeeperDisplay();
-
-}
-
-alert('Tempo terminado.');
-
-}
-
-},1000);
-
-updateGoalkeeperDisplay();
-
-}
-
+/* =========================================================
+   PAUSAR JOGO
+========================================================= */
 
 function pauseTimer(){
 
-clearInterval(timerInterval);
+  if(timerInterval !== null){
 
-timerInterval=null;
+    clearInterval(
+      timerInterval
+    );
+
+  }
+
+  timerInterval = null;
+
+  timerRunning = false;
 
 }
 
+
+/* =========================================================
+   RESET DO TEMPO
+========================================================= */
 
 function resetTimer(){
 
-pauseTimer();
+  pauseTimer();
 
-totalSeconds=20*60;
+  totalSeconds =
+    HALF_TIME;
 
-updateTimer();
+  updateTimer();
 
 }
 
 
-/* =========================
+/* =========================================================
+   ENTRAR EM CAMPO
+========================================================= */
+
+function enterGoalkeeper(){
+
+  const goalkeeper =
+    document.getElementById('goalkeeper').value;
+
+
+  /*
+     Se já estava outra GR em campo,
+     ela sai automaticamente.
+  */
+
+  if(
+    currentGoalkeeper &&
+    currentGoalkeeper !== goalkeeper
+  ){
+
+    currentGoalkeeper =
+      null;
+
+  }
+
+
+  currentGoalkeeper =
+    goalkeeper;
+
+
+  updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   SAIR DE CAMPO
+========================================================= */
+
+function exitGoalkeeper(){
+
+  /*
+     Apenas retira a GR atualmente
+     selecionada se for ela que está
+     em campo.
+  */
+
+  const goalkeeper =
+    document.getElementById('goalkeeper').value;
+
+
+  if(
+    currentGoalkeeper === goalkeeper
+  ){
+
+    currentGoalkeeper = null;
+
+  }
+
+
+  updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   CINCO INICIAL
+========================================================= */
+
+function setStartingGoalkeeper(){
+
+  const goalkeeper =
+    document.getElementById('goalkeeper').value;
+
+
+  /*
+     A GR selecionada passa a ser
+     automaticamente a titular inicial.
+
+     Não é necessário criar outro
+     campo "estado".
+  */
+
+  currentGoalkeeper =
+    goalkeeper;
+
+
+  /*
+     Apenas marcamos que esta GR
+     começou o jogo.
+  */
+
+  const half =
+    document.getElementById('half').value;
+
+
+  localStorage.setItem(
+
+    'startingGoalkeeper|' + half,
+
+    goalkeeper
+
+  );
+
+
+  updatePlayingTime();
+
+}
+
+
+/* =========================================================
+   MUDAR GR
+========================================================= */
+
+document
+  .getElementById('goalkeeper')
+  .addEventListener(
+    'change',
+    loadStats
+  );
+
+
+/* =========================================================
    MUDAR PARTE
-========================= */
+========================================================= */
 
-document.getElementById('half')
-.addEventListener('change',()=>{
+document
+  .getElementById('half')
+  .addEventListener(
+    'change',
+    () => {
 
-pauseTimer();
+      /*
+         Cada parte começa com
+         20 minutos.
 
-totalSeconds=20*60;
+         As estatísticas e o tempo
+         da parte anterior permanecem
+         guardados.
+      */
 
-updateTimer();
+      pauseTimer();
 
-});
+      totalSeconds =
+        HALF_TIME;
+
+      currentGoalkeeper =
+        null;
+
+      updateTimer();
+
+      loadStats();
+
+    }
+  );
 
 
-/* =========================
-   MUDAR GUARDA-REDES
-========================= */
-
-document.getElementById('goalkeeper')
-.addEventListener('change',()=>{
-
-updateGoalkeeperDisplay();
-
-});
-
-
-/* =========================
+/* =========================================================
    BOTÕES
-========================= */
+========================================================= */
 
-document.getElementById('startBtn')
-.addEventListener(
-'click',
-startTimer
-);
-
-document.getElementById('pauseBtn')
-.addEventListener(
-'click',
-pauseTimer
-);
-
-document.getElementById('resetTimerBtn')
-.addEventListener(
-'click',
-resetTimer
-);
-
-document.getElementById('startingBtn')
-.addEventListener(
-'click',
-toggleStarting
-);
-
-document.getElementById('enterBtn')
-.addEventListener(
-'click',
-enterGoalkeeper
-);
-
-document.getElementById('exitBtn')
-.addEventListener(
-'click',
-exitGoalkeeper
-);
+document
+  .getElementById('startBtn')
+  .addEventListener(
+    'click',
+    startTimer
+  );
 
 
-/* =========================
+document
+  .getElementById('pauseBtn')
+  .addEventListener(
+    'click',
+    pauseTimer
+  );
+
+
+document
+  .getElementById('resetTimerBtn')
+  .addEventListener(
+    'click',
+    resetTimer
+  );
+
+
+document
+  .getElementById('enterBtn')
+  .addEventListener(
+    'click',
+    enterGoalkeeper
+  );
+
+
+document
+  .getElementById('exitBtn')
+  .addEventListener(
+    'click',
+    exitGoalkeeper
+  );
+
+
+document
+  .getElementById('startingBtn')
+  .addEventListener(
+    'click',
+    setStartingGoalkeeper
+  );
+
+
+/* =========================================================
+   LIMPAR ESTATÍSTICAS DA GR SELECIONADA
+========================================================= */
+
+function resetStats(){
+
+  const goalkeeper =
+    document.getElementById('goalkeeper').value;
+
+  const half =
+    document.getElementById('half').value;
+
+
+  if(
+    !confirm(
+      'Tem a certeza que pretende limpar as estatísticas de ' +
+      goalkeeper +
+      ' da ' +
+      half +
+      '.ª parte?'
+    )
+  ){
+
+    return;
+
+  }
+
+
+  statIds.forEach(id => {
+
+    delete stats[
+      'estatistica|' +
+      goalkeeper +
+      '|' +
+      half +
+      '|' +
+      id
+    ];
+
+  });
+
+
+  /*
+     Também limpa o tempo individual
+     dessa GR nessa parte.
+  */
+
+  delete playingTime[
+    playingKey(
+      goalkeeper,
+      half
+    )
+  ];
+
+
+  saveStats();
+
+
+  localStorage.setItem(
+    'grPlayingTime',
+    JSON.stringify(playingTime)
+  );
+
+
+  loadStats();
+
+}
+
+
+/* =========================================================
+   GUARDAR TUDO
+========================================================= */
+
+function saveData(){
+
+  saveStats();
+
+  saveMatchInfo();
+
+
+  localStorage.setItem(
+    'grPlayingTime',
+    JSON.stringify(playingTime)
+  );
+
+
+  alert(
+    'Dados guardados com sucesso.'
+  );
+
+}
+
+
+/* =========================================================
    INICIALIZAÇÃO
-========================= */
+========================================================= */
 
 loadStats();
 
 updateTimer();
 
-updateGoalkeeperDisplay();
+updatePlayingTime();
 
 
-/* =========================
-   PWA
-========================= */
+/*
+   Service Worker para a PWA
+*/
 
-if('serviceWorker' in navigator){
+if(
+  'serviceWorker' in navigator
+){
 
-window.addEventListener('load',()=>{
+  window.addEventListener(
+    'load',
+    () => {
 
-navigator.serviceWorker.register('./sw.js');
+      navigator.serviceWorker
+        .register('./sw.js')
+        .catch(
+          error =>
+          console.log(
+            'Service Worker:',
+            error
+          )
+        );
 
-});
+    }
+  );
 
 }
 
